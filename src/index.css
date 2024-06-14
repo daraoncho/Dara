@@ -1,3 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;600;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --color-body: #b6cbce;
+  --color-heading: #eef3db;
+  --color-base: #033f47;
+  --color-base2: #022a30;
+  --color-brand: #e0f780;
+  --color-brand2: #deff58;
+  --sidebar-width: 240px;
+  --font-base: "Bai Jamjuree";
+  --typewriter-speed: 9;
+}
+
+body {
+  background-color: var(--color-base2);
+  color: var(--color-body);
+  font-family: var(--font-base), sans-serif;
+}
+
+@media (min-width: 992px) {
+  .navbar {
+    min-height: 100vh;
+    width: var(--sidebar-width);
+    background: linear-gradient(rgba(3, 63, 71, 0.8), rgba(3, 63, 71, 0.8)),
+      url(../Images/sidebar-img.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+
+  .navbarContainer img {
+    border: 8px var(--color-brand) solid;
+  }
+
+  /* Content wrapper */
+  #content-wrapper {
+    padding-left: var(--sidebar-width);
+  }
+}

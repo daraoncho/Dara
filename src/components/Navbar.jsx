@@ -1,13 +1,18 @@
+import nav from "../styles/Navbar.module.css";
+import dara from "../assets/img/dara.webp";
+import { RiMenu2Line } from "react-icons/ri";
+
 const Navbar = () => {
   return (
     <div>
-      <nav>
-        <div>
+      <nav className={nav.navbar}>
+        <div className={nav.navbarContainer}>
           <a href="#">
             <span>Leo</span>
-            <img src="" alt="" />
+            <img src={dara} alt="" />
           </a>
           <button
+            className="p-2 border border-gray-400 rounded lg:hidden"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarNav"
@@ -15,26 +20,39 @@ const Navbar = () => {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span></span>
+            <span className="block w-6 h-6 bg-gray-800">
+              <RiMenu2Line />
+            </span>
           </button>
+
           <div id="navbarNav">
-            <ul>
-              <li>
-                <a href="#home">Home</a>
-              </li>
-              <li>
-                <a href="#about">About</a>
-              </li>
-              <li>
-                <a href="#work">Work</a>
-              </li>
-              {/* <li>
-                <a href="#blog">Blog</a>
-              </li> */}
-              <li>
-                <a href="#contact">Contact</a>
-              </li>
-            </ul>
+            <div className={nav.navbarNav}>
+              <ul>
+                <li className={nav.navItem}>
+                  <a className={nav.navLink} href="#home">
+                    Home
+                  </a>
+                </li>
+                <li className={nav.navItem}>
+                  <a className={nav.navLink} href="#about">
+                    About
+                  </a>
+                </li>
+                <li className={nav.navItem}>
+                  <a className={nav.navLink} href="#work">
+                    Work
+                  </a>
+                </li>
+                {/* <li>
+                  <a href="#blog">Blog</a>
+                </li> */}
+                <li className={nav.navItem}>
+                  <a className={nav.navLink} href="#contact">
+                    Contact
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </nav>
