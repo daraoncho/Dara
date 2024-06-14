@@ -4,12 +4,13 @@ import About from "./components/About";
 import Work from "./components/Work";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import app from "./styles/Navbar.module.css"
 
 function App() {
   return (
     <div className="App">
       <Navbar />
-      <div className="content-wrapper">
+      <div className={app.content_wrapper}>
         <Home />
         <About />
         <Work />

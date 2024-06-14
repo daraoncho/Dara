@@ -37,7 +37,7 @@ body {
   }
 
   /* Content wrapper */
-  #content-wrapper {
+  .content_wrapper {
     padding-left: var(--sidebar-width);
   }
 }
