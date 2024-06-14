@@ -51,11 +51,11 @@ const Navbar = () => {
                 {/* <li>
                   <a href="#blog">Blog</a>
                 </li> */}
-                <li className={nav.navItem}>
+                {/* <li className={nav.navItem}>
                   <a className={nav.navLink} href="#contact">
                     Contact
                   </a>
-                </li>
+                </li> */}
               </ul>
             </div>
           </div>
