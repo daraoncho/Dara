@@ -1,0 +1,50 @@
+.full_height {
+  min-height: 100vh;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  border-bottom: 2px rgba(255, 255, 255, 0.1) solid;
+}
+
+.text_brand {
+  color: var(--color-brand);
+}
+
+/* Cards */
+
+.card_custom {
+  @apply rounded-[16px];
+}
+
+.card_custom .card_custom_image {
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.card_custom .card_custom_image img {
+  transition: all 0.4s ease;
+}
+
+.card_custom:hover .card_custom_image img {
+  transform: scale(1.1);
+}
+
+.card_custom_content {
+  @apply p-4;
+}
+
+.card_footer {
+  position: relative;
+  display: block;
+  /* border: 1px solid green; */
+}
+.external_link {
+  position: absolute;
+  left: 85%;
+  bottom: 10%;
+  font-size: 25px;
+  /* border: 1px solid red; */
+}
