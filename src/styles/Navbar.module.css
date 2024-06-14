@@ -1,4 +1,4 @@
-:root {
+/* :root {
   --color-body: #b6cbce;
   --color-heading: #eef3db;
   --color-base: #033f47;
@@ -8,9 +8,9 @@
   --sidebar-width: 240px;
   --font-base: "Bai Jamjuree";
   --typewriter-speed: 9;
-}
+} */
 
-h1,
+/* h1,
 h2,
 h3,
 h4,
@@ -32,7 +32,7 @@ a:hover {
 
 img {
   width: 100%;
-}
+} */
 
 .navbar {
   background-color: var(--color-base);

@@ -3,11 +3,11 @@ import { IoMailOutline } from "react-icons/io5";
 
 const Home = () => {
   return (
-    <div>
+    <div id="home_part">
       <div className={home.full_height}>
         <section id="home" className="lg:px-5">
           <div className="container">
-            <div className="row">
+            <div className="grid grid-cols-1">
               <div className={home.homeCol}>
                 <h1 className={home.intro} data-aos="fade-up">
                   hi,

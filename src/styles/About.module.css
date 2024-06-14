@@ -1,0 +1,81 @@
+.full_height {
+  min-height: 100vh;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  border-bottom: 2px rgba(255, 255, 255, 0.1) solid;
+}
+
+.aboutCol {
+  @apply lg:col-span-8;
+}
+
+.text_brand {
+  color: var(--color-brand);
+}
+
+.aboutMe {
+  @apply p-4 rounded-[16px] mb-4;
+}
+
+.bg_base {
+  background-color: var(--color-base);
+}
+
+.shadow_effect {
+  transition: all 0.5s;
+}
+
+.shadow_effect:hover {
+  box-shadow: -6px 6px 0 0 var(--color-brand);
+}
+
+.tech_stack {
+  list-style-type: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(150px, 10px));
+}
+
+.link_custom {
+  font-weight: 700;
+  position: relative;
+}
+
+.link_custom a {
+  color: #4abba7;
+}
+
+.link_custom::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background-color: var(--color-brand);
+  position: absolute;
+  left: 0;
+  top: 110%;
+  transition: all 0.4s;
+}
+
+.link_custom:hover::after {
+  width: 100%;
+}
+
+.exp {
+  @apply lg:col-span-12;
+}
+
+.exp h3 {
+  @apply mb-4;
+}
+
+.aboutExp {
+  @apply p-4 rounded-[16px];
+}
+
+.aboutExp span {
+  @apply mb-2 ml-1;
+}
