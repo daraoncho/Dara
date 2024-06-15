@@ -1,14 +1,25 @@
 .footer {
-  @apply flex gap-y-4 justify-between items-center;
-}
-
-.social_icons a {
-  width: 40px;
-  height: 40px;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--color-base);
-  border-radius: 100px;
-  font-size: 24px;
-}
+    @apply flex flex-col lg:flex-row gap-y-4 justify-between items-center text-center lg:text-left;
+  }
+  
+  .social_icons a {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-base);
+    border-radius: 100px;
+    font-size: 24px;
+  }
+  
+  @media (min-width: 1024px) {
+    .footer {
+      @apply flex-row;
+    }
+  
+    .social_icons {
+      @apply mt-0;
+    }
+  }
+  

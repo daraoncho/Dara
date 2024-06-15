@@ -1,51 +1,52 @@
 .full_height {
-  min-height: 100vh;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding-top: 80px;
-  padding-bottom: 80px;
-  border-bottom: 2px rgba(255, 255, 255, 0.1) solid;
-}
-
-.homeCol {
-  @apply lg:col-span-10;
-}
-
-.intro {
-  @apply text-4xl font-bold;
-}
-
-.text_brand {
-  color: var(--color-brand);
-}
-
-.homeCol h2 {
-  @apply font-light pb-2 text-[#b6cbce];
-}
-
-.homeCol p {
-  @apply leading-relaxed mt-2 mb-4;
-}
-.homeCol a {
-  @apply mr-3 rounded-[6px];
-}
-
-.btn {
-  padding: 12px 28px;
-  font-weight: 700;
-}
-
-.btn_brand {
-  background-color: var(--color-brand);
-  border-color: var(--color-brand);
-  color: var(--color-base);
-}
-
-.btn_brand:hover,
-.btn_brand:focus {
-  background-color: var(--color-brand2);
-  color: var(--color-base);
-  border-color: var(--color-brand2);
-}
+    min-height: 100vh;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 100px; /* Increased padding for more spacing */
+    padding-bottom: 100px; /* Increased padding for more spacing */
+    border-bottom: 2px rgba(255, 255, 255, 0.1) solid;
+    @apply mx-8;
+  }
+  
+  .homeCol {
+    @apply lg:col-span-10;
+  }
+  
+  .intro {
+    @apply text-5xl font-bold; /* Increased text size */
+    margin-bottom: 16px; /* Added margin for spacing */
+  }
+  
+  .text_brand {
+    color: var(--color-brand);
+  }
+  
+  .subtitle {
+    @apply text-3xl font-light pb-4 text-[#b6cbce]; /* Increased text size and padding bottom */
+  }
+  
+  .description {
+    @apply text-lg leading-relaxed mt-4 mb-8; /* Increased text size and adjusted margins */
+  }
+  
+  .btn {
+    padding: 14px 32px; /* Adjusted padding for a larger button */
+    font-weight: 700;
+    border-radius: 6px;
+  }
+  
+  .btn_brand {
+    background-color: var(--color-brand);
+    border-color: var(--color-brand);
+    color: var(--color-base);
+  }
+  
+  .btn_brand:hover,
+  .btn_brand:focus {
+    background-color: var(--color-brand2);
+    color: var(--color-base);
+    border-color: var(--color-brand2);
+  }
+  
