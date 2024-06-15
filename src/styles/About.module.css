@@ -7,7 +7,7 @@
   padding-top: 100px;
   padding-bottom: 100px;
   border-bottom: 2px rgba(255, 255, 255, 0.1) solid;
-  @apply mx-6;
+  @apply lg:mx-8;
 }
 
 .aboutCol {
