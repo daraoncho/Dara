@@ -28,7 +28,7 @@
   }
   
   .description {
-    @apply text-lg leading-relaxed mt-4 mb-8; /* Increased text size and adjusted margins */
+    @apply text-xl leading-relaxed mt-2 mb-8 lg:pr-20; /* Increased text size and adjusted margins */
   }
   
   .btn {

@@ -1,5 +1,6 @@
 import home from "../styles/Home.module.css";
 import { IoMailOutline } from "react-icons/io5";
+import Typewriter from "typewriter-effect";
 
 const Home = () => {
   return (
@@ -10,8 +11,20 @@ const Home = () => {
             <div className="grid grid-cols-1">
               <div className={home.homeCol}>
                 <h1 className={home.intro} data-aos="fade-up">
-                  hi,
-                  <span className={home.text_brand}> Dara </span> here.
+                  <Typewriter
+                    options={{
+                      strings: [
+                        'hi, <span class="' +
+                          home.text_brand +
+                          '">Dara</span> here.',
+                      ],
+                      autoStart: true,
+                      loop: false,
+                      html: true, // Enable HTML tags in strings
+                      deleteSpeed: Infinity, // Keep the text visible after typing
+
+                    }}
+                  />
                 </h1>
                 <h2
                   className={home.subtitle}
@@ -26,7 +39,7 @@ const Home = () => {
                   data-aos-delay="300"
                 >
                   I&lsquo;m an aspiring software engineer and game developer
-                  based in Nigeria. I&lsquo;m fascinated by large-scale <br />{" "}
+                  based in Nigeria. I&lsquo;m fascinated by large-scale
                   inventions and products that take things to the next level and
                   impact people&lsquo;s lives!.
                 </p>
