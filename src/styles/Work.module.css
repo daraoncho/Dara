@@ -54,6 +54,7 @@
   .project_card {
     flex: 1 1 calc(50% - 1rem);
     box-sizing: border-box;
+    @apply mb-3;
   }
   
   @media (max-width: 768px) {

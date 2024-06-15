@@ -16,7 +16,7 @@ const Experience = () => {
                 >
                   /experience
                 </h3>
-                <div className="grid lg:grid-cols-2 gap-4">
+                <div className="grid lg:grid-cols-2 gap-10">
                   <a
                     href="https://hashtag.cim"
                     target="_blank"

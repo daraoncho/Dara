@@ -1,11 +1,12 @@
 .navbar {
   background-color: var(--color-base);
-  @apply flex lg:flex-row flex-col text-white bg-gray-800 fixed top-0 left-0 right-0 z-50;
+  @apply flex lg:flex-row flex-col text-white fixed top-0 left-0 right-0 z-50;
 }
 
 .navbarContainer {
   @apply container flex justify-between lg:justify-center lg:flex-col;
   position: relative; /* Added to position the hamburger menu button */
+  box-shadow: -5px 0px 6px 9px rgba(202,189,189,0.75);
 }
 
 .navbarContainer a {
@@ -20,7 +21,7 @@
 
 .navbarContainer img {
   @apply hidden lg:block mb-5 rounded-full h-[200px];
-  border: 8px var(--color-brand) solid;
+  border: 8px var(--color-base2) solid;
 }
 
 .menuButton {
@@ -74,10 +75,10 @@
   .navbar {
     min-height: 100vh;
     width: var(--sidebar-width);
-    background: linear-gradient(rgba(3, 63, 71, 0.8), rgba(3, 63, 71, 0.8)),
+    /* background: linear-gradient(rgba(3, 63, 71, 0.8), rgba(3, 63, 71, 0.8)),
       url(../Images/sidebar-img.jpg);
     background-size: cover;
-    background-position: center;
+    background-position: center; */
   }
 
   .navbar-brand img {

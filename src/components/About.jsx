@@ -14,7 +14,7 @@ const About = () => {
             </div>
 
             <div className="col-span-12" data-aos="fade-up" data-aos-delay="400">
-              <div className={`${about.aboutMe} ${about.bg_base} ${about.shadow_effect}`}>
+              <div className={`${about.aboutMe} ${about.shadow_effect}`}>
                 <h4 className={about.text_brand}>/about me</h4>
                 <p className={about.description}>
                   My name is Adebayo Oluwadarasimi. I&lsquo;m currently a final year

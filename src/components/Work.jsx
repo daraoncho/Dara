@@ -21,7 +21,7 @@ const Work = () => {
               </div>
             </div>
 
-            <div className="flex flex-wrap gap-y-4 gap-x-4">
+            <div className="flex flex-wrap gap-y-6 gap-x-6">
               {/* project 1 */}
               <div className={work.project_card} data-aos="fade-up" data-aos-delay="400">
                 <div
@@ -46,7 +46,7 @@ const Work = () => {
                     </a>
                     <a
                       className={`${work.card_footer} ${about.shadow_effect}`}
-                      href="https://github.com/daraoncho/Leo"
+                      href="https://github.com/daraoncho/StudyBuddy"
                     >
                       <FaGithub className={work.external_link} />
                     </a>
@@ -83,7 +83,7 @@ const Work = () => {
                     </a>
                     <a
                       className={`${work.card_footer} ${about.shadow_effect}`}
-                      href="https://github.com/daraoncho/AllInOne"
+                      href="https://github.com/daraoncho/Meet"
                     >
                       <FaGithub className={work.external_link} />
                     </a>
@@ -92,7 +92,7 @@ const Work = () => {
               </div>
             </div>
 
-            <div className="flex flex-wrap gap-y-4 gap-x-4 mt-4">
+            <div className="flex flex-wrap gap-y-6 gap-x-6 mt-4">
               {/* project 3 */}
               <div className={work.project_card} data-aos="fade-up" data-aos-delay="400">
                 <div
@@ -119,7 +119,7 @@ const Work = () => {
                     </a>
                     <a
                       className={`${work.card_footer} ${about.shadow_effect}`}
-                      href="https://github.com/daraoncho/Leo"
+                      href="https://github.com/Eksu-CSC"
                     >
                       <FaGithub className={work.external_link} />
                     </a>
@@ -157,7 +157,7 @@ const Work = () => {
                     </a>
                     <a
                       className={`${work.card_footer} ${about.shadow_effect}`}
-                      href="https://github.com/daraoncho/AllInOne"
+                      href="https://github.com/daraoncho/DarasCollection"
                     >
                       <FaGithub className={work.external_link} />
                     </a>
@@ -165,7 +165,7 @@ const Work = () => {
                 </div>
               </div>
             </div>
-            <div className="flex flex-wrap gap-y-4 gap-x-4 mt-4">
+            <div className="flex flex-wrap gap-y-6 gap-x-6 mt-4">
               {/* project 5 */}
               <div className={work.project_card} data-aos="fade-up" data-aos-delay="400">
                 <div
@@ -189,7 +189,7 @@ const Work = () => {
                     </a>
                     <a
                       className={`${work.card_footer} ${about.shadow_effect}`}
-                      href="https://github.com/daraoncho/Leo"
+                      href="https://github.com/daraoncho/Bloggy"
                     >
                       <FaGithub className={work.external_link} />
                     </a>
