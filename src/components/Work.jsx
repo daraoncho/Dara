@@ -16,8 +16,8 @@ const Work = () => {
           <div className="container">
             <div className="flex pb-4" data-aos="fade-up">
               <div className="lg:col-span-8">
-                <h6 className={work.text_brand}>WORK</h6>
-                <h1>My Recent Projects</h1>
+                <h6 className={about.text_brand}>WORK</h6>
+                <h1 className={about.heading}>My Recent Projects</h1>
               </div>
             </div>
 
@@ -40,7 +40,7 @@ const Work = () => {
                     <p>ReactJS, Firebase, TailwindCSS, </p>
                     <a
                       className={about.link_custom}
-                      href="https://leooportfolio.netlify.app"
+                      href="https://schoolbuddy.netlify.app"
                     >
                       Check out
                     </a>
@@ -77,7 +77,7 @@ const Work = () => {
                     <p>ReactVite, NodeJS, Firebase, TailwindCSS</p>
                     <a
                       className={about.link_custom}
-                      href="https://dara-links.netlify.app"
+                      href="https://meetproto.netlify.app"
                     >
                       Check out
                     </a>
@@ -103,7 +103,7 @@ const Work = () => {
                   </div>
                   <div className={work.card_custom_content}>
                     <h4>EKSU Departmental Website Integration</h4>
-                    <p className="pb-1">
+                    <p className="pb-6">
                       An application created for Ekiti State University
                       departments with a Django back-end and React front-end;
                       that allows students to be able to access all necessary
@@ -113,7 +113,7 @@ const Work = () => {
                     <p>Python (Django), ReactVite, TailwindCSS, MongoDB</p>
                     <a
                       className={about.link_custom}
-                      href="https://leooportfolio.netlify.app"
+                      href="https://csctestserver.onrender.com"
                     >
                       Check out
                     </a>
@@ -151,7 +151,7 @@ const Work = () => {
                     <p>ReactVite, Contentful, GraphQL</p>
                     <a
                       className={about.link_custom}
-                      href="https://dara-links.netlify.app"
+                      href="https://darascollection.com"
                     >
                       Check out
                     </a>
@@ -183,7 +183,7 @@ const Work = () => {
                     <p>Javascript, HTML / CSS</p>
                     <a
                       className={about.link_custom}
-                      href="https://leooportfolio.netlify.app"
+                      href="https://dara-bloggy.netlify.app"
                     >
                       Check out
                     </a>

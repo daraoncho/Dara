@@ -2,9 +2,11 @@ import { useState, useEffect } from "react";
 import nav from "../styles/Navbar.module.css";
 import avatar from "../assets/img/DaraAvatar.webp";
 import { RiMenu2Line } from "react-icons/ri";
+import { RxCross2 } from "react-icons/rx";
 
 const Navbar = () => {
   const [activeLink, setActiveLink] = useState('');
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,81 +26,80 @@ const Navbar = () => {
     };
   }, []);
 
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <div>
       <nav className={nav.navbar}>
         <div className={nav.navbarContainer}>
           <a href="#">
-            <span>Leo</span>
-            <img src={avatar} alt="" />
+            <span>Dara</span>
+            <img src={avatar} alt="Avatar" />
           </a>
           <button
-            className="p-2 border border-gray-400 rounded lg:hidden"
+            className={nav.menuButton}
             type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
+            onClick={toggleMenu}
             aria-controls="navbarNav"
-            aria-expanded="false"
+            aria-expanded={isMenuOpen}
             aria-label="Toggle navigation"
           >
-            <span className="block w-6 h-6 bg-gray-800">
-              <RiMenu2Line />
-            </span>
+            {isMenuOpen ? <RxCross2 className={nav.icon} /> : <RiMenu2Line className={nav.icon} />}
           </button>
 
-          <div id="navbarNav">
-            <div className={nav.navbarNav}>
-              <ul>
-                <li className={nav.navItem}>
-                  <a
-                    className={`${nav.navLink} ${activeLink === 'home' ? nav.active : ''}`}
-                    href="#home"
-                    onClick={() => setActiveLink('home')}
-                  >
-                    Home
-                  </a>
-                </li>
-                <li className={nav.navItem}>
-                  <a
-                    className={`${nav.navLink} ${activeLink === 'about' ? nav.active : ''}`}
-                    href="#about"
-                    onClick={() => setActiveLink('about')}
-                  >
-                    About
-                  </a>
-                </li>
-                <li className={nav.navItem}>
-                  <a
-                    className={`${nav.navLink} ${activeLink === 'experience' ? nav.active : ''}`}
-                    href="#experience"
-                    onClick={() => setActiveLink('experience')}
-                  >
-                    Experience
-                  </a>
-                </li>
-                <li className={nav.navItem}>
-                  <a
-                    className={`${nav.navLink} ${activeLink === 'work' ? nav.active : ''}`}
-                    href="#work"
-                    onClick={() => setActiveLink('work')}
-                  >
-                    Work
-                  </a>
-                </li>
-                {/* <li>
-                  <a href="#blog">Blog</a>
-                </li> */}
-                {/* <li className={nav.navItem}>
-                  <a
-                    className={`${nav.navLink} ${activeLink === 'contact' ? nav.active : ''}`}
-                    href="#contact"
-                    onClick={() => setActiveLink('contact')}
-                  >
-                    Contact
-                  </a>
-                </li> */}
-              </ul>
-            </div>
+          <div id="navbarNav" className={`${nav.navbarNav} ${isMenuOpen ? nav.showMenu : ''}`}>
+            <ul>
+              <li className={nav.navItem}>
+                <a
+                  className={`${nav.navLink} ${activeLink === 'home' ? nav.active : ''}`}
+                  href="#home"
+                  onClick={() => { setActiveLink('home'); setIsMenuOpen(false); }}
+                >
+                  Home
+                </a>
+              </li>
+              <li className={nav.navItem}>
+                <a
+                  className={`${nav.navLink} ${activeLink === 'about' ? nav.active : ''}`}
+                  href="#about"
+                  onClick={() => { setActiveLink('about'); setIsMenuOpen(false); }}
+                >
+                  About
+                </a>
+              </li>
+              <li className={nav.navItem}>
+                <a
+                  className={`${nav.navLink} ${activeLink === 'experience' ? nav.active : ''}`}
+                  href="#experience"
+                  onClick={() => { setActiveLink('experience'); setIsMenuOpen(false); }}
+                >
+                  Experience
+                </a>
+              </li>
+              <li className={nav.navItem}>
+                <a
+                  className={`${nav.navLink} ${activeLink === 'work' ? nav.active : ''}`}
+                  href="#work"
+                  onClick={() => { setActiveLink('work'); setIsMenuOpen(false); }}
+                >
+                  Work
+                </a>
+              </li>
+              {/* <li>
+                <a href="#blog">Blog</a>
+              </li> */}
+              {/* <li className={nav.navItem}>
+                <a
+                  className={`${nav.navLink} ${activeLink === 'contact' ? nav.active : ''}`}
+                  href="#contact"
+                  onClick={() => { setActiveLink('contact'); setIsMenuOpen(false); }}
+                >
+                  Contact
+                </a>
+              </li> */}
+            </ul>
           </div>
         </div>
       </nav>

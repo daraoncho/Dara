@@ -1,50 +1,15 @@
-/* :root {
-  --color-body: #b6cbce;
-  --color-heading: #eef3db;
-  --color-base: #033f47;
-  --color-base2: #022a30;
-  --color-brand: #e0f780;
-  --color-brand2: #deff58;
-  --sidebar-width: 240px;
-  --font-base: "Bai Jamjuree";
-  --typewriter-speed: 9;
-} */
-
-/* h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: var(--color-heading);
-  font-weight: 700;
-}
-
-a {
-  text-decoration: none;
-  color: var(--color-body);
-  transition: all 0.4s ease;
-}
-
-a:hover {
-  color: var(--color-brand);
-}
-
-img {
-  width: 100%;
-} */
-
 .navbar {
   background-color: var(--color-base);
-  @apply flex lg:flex-row flex-col text-white bg-gray-800 fixed top-0 left-0 right-0;
+  @apply flex lg:flex-row flex-col text-white bg-gray-800 fixed top-0 left-0 right-0 z-50;
 }
 
 .navbarContainer {
-  @apply container flex justify-center lg:flex-col;
+  @apply container flex justify-between lg:justify-center lg:flex-col;
+  position: relative; /* Added to position the hamburger menu button */
 }
 
 .navbarContainer a {
-  @apply lg:mb-4 lg:mx-auto;
+  @apply lg:mb-4 lg:mx-auto flex justify-center items-center;
 }
 
 .navbarContainer span {
@@ -56,6 +21,15 @@ img {
 .navbarContainer img {
   @apply hidden lg:block mb-5 rounded-full h-[200px];
   border: 8px var(--color-brand) solid;
+}
+
+.menuButton {
+  @apply p-2 border border-gray-400 rounded lg:hidden;
+  background-color: transparent;
+}
+
+.icon {
+  @apply text-2xl;
 }
 
 .navbarNav {
@@ -83,6 +57,17 @@ img {
 .navbarNav .navLink.active,
 .navbarNav .navLink.navLink.active {
   color: var(--color-brand);
+}
+
+/* Show menu when toggled */
+.showMenu {
+  @apply block;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: var(--color-base);
+  padding: 1rem;
 }
 
 @media (min-width: 992px) {
