@@ -16,6 +16,10 @@
   --typewriter-speed: 9;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--color-base2);
   color: var(--color-body);
