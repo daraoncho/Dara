@@ -22,7 +22,7 @@ const Experience = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     data-aos="fade-up"
-                    data-aos-delay="600"
+                    data-aos-delay="700"
                   >
                     <div
                       className={`${about.aboutExp} ${about.bg_base} ${about.shadow_effect}`}
@@ -54,7 +54,7 @@ const Experience = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     data-aos="fade-up"
-                    data-aos-delay="600"
+                    data-aos-delay="900"
                   >
                     <div
                       className={`${about.aboutExp} ${about.bg_base} ${about.shadow_effect}`}
@@ -115,7 +115,7 @@ const Experience = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     data-aos="fade-up"
-                    data-aos-delay="600"
+                    data-aos-delay="800"
                   >
                     <div
                       className={`${about.aboutExp} ${about.bg_base} ${about.shadow_effect}`}

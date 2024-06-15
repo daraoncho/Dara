@@ -29,21 +29,21 @@ const Home = () => {
                 <h2
                   className={home.subtitle}
                   data-aos="fade-up"
-                  data-aos-delay="200"
+                  data-aos-delay="700"
                 >
                   i bring thoughts to reality sometimes.
                 </h2>
                 <p
                   className={home.description}
                   data-aos="fade-up"
-                  data-aos-delay="300"
+                  data-aos-delay="1000"
                 >
                   I&lsquo;m an aspiring software engineer and game developer
                   based in Nigeria. I&lsquo;m fascinated by large-scale
                   inventions and products that take things to the next level and
                   impact people&lsquo;s lives!.
                 </p>
-                <div data-aos="fade-up" data-aos-delay="600">
+                <div data-aos="fade-up" data-aos-delay="1100">
                   <a
                     href="mailto:adebayooluwadarasimi1@gmail.com"
                     className={`${home.btn} ${home.btn_brand}`}

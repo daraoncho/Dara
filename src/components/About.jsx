@@ -13,7 +13,7 @@ const About = () => {
               </div>
             </div>
 
-            <div className="col-span-12" data-aos="fade-up" data-aos-delay="300">
+            <div className="col-span-12" data-aos="fade-up" data-aos-delay="400">
               <div className={`${about.aboutMe} ${about.bg_base} ${about.shadow_effect}`}>
                 <h4 className={about.text_brand}>/about me</h4>
                 <p className={about.description}>

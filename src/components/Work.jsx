@@ -23,7 +23,7 @@ const Work = () => {
 
             <div className="flex flex-wrap gap-y-4 gap-x-4">
               {/* project 1 */}
-              <div className={work.project_card} data-aos="fade-up">
+              <div className={work.project_card} data-aos="fade-up" data-aos-delay="400">
                 <div
                   className={`${work.card_custom} ${about.bg_base} ${about.shadow_effect}`}
                 >
@@ -58,7 +58,7 @@ const Work = () => {
               <div
                 className={work.project_card}
                 data-aos="fade-up"
-                data-aos-delay="300"
+                data-aos-delay="600"
               >
                 <div
                   className={`${work.card_custom} ${about.bg_base} ${about.shadow_effect}`}
@@ -94,7 +94,7 @@ const Work = () => {
 
             <div className="flex flex-wrap gap-y-4 gap-x-4 mt-4">
               {/* project 3 */}
-              <div className={work.project_card} data-aos="fade-up">
+              <div className={work.project_card} data-aos="fade-up" data-aos-delay="400">
                 <div
                   className={`${work.card_custom} ${about.bg_base} ${about.shadow_effect}`}
                 >
@@ -131,7 +131,7 @@ const Work = () => {
               <div
                 className={work.project_card}
                 data-aos="fade-up"
-                data-aos-delay="300"
+                data-aos-delay="700"
               >
                 <div
                   className={`${work.card_custom} ${about.bg_base} ${about.shadow_effect}`}
@@ -167,7 +167,7 @@ const Work = () => {
             </div>
             <div className="flex flex-wrap gap-y-4 gap-x-4 mt-4">
               {/* project 5 */}
-              <div className={work.project_card} data-aos="fade-up">
+              <div className={work.project_card} data-aos="fade-up" data-aos-delay="400">
                 <div
                   className={`${work.card_custom} ${about.bg_base} ${about.shadow_effect}`}
                 >
@@ -201,7 +201,7 @@ const Work = () => {
               <div
                 className={work.project_card}
                 data-aos="fade-up"
-                data-aos-delay="300"
+                data-aos-delay="700"
               >
                 <div
                   className={`${work.card_custom} ${about.bg_base} ${about.shadow_effect}`}
