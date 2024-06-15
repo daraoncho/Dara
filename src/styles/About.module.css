@@ -31,8 +31,7 @@
 
 .bg_base {
   background-color: var(--color-base);
-  box-shadow: -1px 0px 6px 3px rgba(202,189,189,0.75);
-
+  box-shadow: -1px 0px 6px 3px rgba(202, 189, 189, 0.75);
 }
 
 .shadow_effect {
@@ -47,7 +46,8 @@
   list-style-type: none;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(2, minmax(15px, 0.2fr));
+  /* grid-template-columns: repeat(2, minmax(15px, 0.2fr)); */
+  grid-template-columns: repeat(2, minmax(150px, 1fr));
   /* gap: 12px; */
 }
 
@@ -149,5 +149,10 @@
   left: 0;
   color: var(--color-brand);
   /* color: #4abba7; */
+}
 
+@media (min-width: 992px) {
+  .tech_stack {
+    grid-template-columns: repeat(2, minmax(15px, 0.2fr));
+  }
 }
