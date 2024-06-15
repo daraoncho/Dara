@@ -3,8 +3,8 @@ import about from "../styles/About.module.css";
 const Experience = () => {
   return (
     <div id="experience_part">
-      <div className={about.full_height}>
-        <section id="experience" className="lg:px-5">
+      <section id="experience" className={about.full_height}>
+        <div className="lg:px-5">
           <div className="container">
             <div className="flex gap-y-5">
               {/* Experience row */}
@@ -115,8 +115,8 @@ const Experience = () => {
               </div>
             </div>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
     </div>
   );
 };

@@ -4,8 +4,8 @@ import { IoMailOutline } from "react-icons/io5";
 const Home = () => {
   return (
     <div id="home_part">
-      <div className={home.full_height}>
-        <section id="home" className="lg:px-5">
+      <section id="home" className={home.full_height}>
+        <div className="lg:px-5">
           <div className="container">
             <div className="grid grid-cols-1">
               <div className={home.homeCol}>
@@ -34,8 +34,8 @@ const Home = () => {
               </div>
             </div>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
     </div>
   );
 };

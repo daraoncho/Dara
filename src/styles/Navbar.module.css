@@ -40,7 +40,7 @@ img {
 }
 
 .navbarContainer {
-  @apply container flex lg:flex-col;
+  @apply container flex justify-center lg:flex-col;
 }
 
 .navbarContainer a {
@@ -54,7 +54,7 @@ img {
 }
 
 .navbarContainer img {
-  @apply hidden lg:block rounded-full h-[200px];
+  @apply hidden lg:block mb-5 rounded-full h-[200px];
   border: 8px var(--color-brand) solid;
 }
 
@@ -63,7 +63,11 @@ img {
 }
 
 .navbarNav ul {
-  @apply  lg:flex lg:flex-col lg:text-center lg:ml-auto;
+  @apply lg:flex lg:flex-col lg:text-center lg:ml-auto;
+}
+
+.navbarNav .navItem {
+  margin-bottom: 1rem; /* Add bottom margin to each nav item */
 }
 
 .navbarNav .navLink {
@@ -75,7 +79,9 @@ img {
 .navbarNav .navLink:hover {
   color: var(--color-brand);
 }
-.navbarNav .navLink.active {
+
+.navbarNav .navLink.active,
+.navbarNav .navLink.navLink.active {
   color: var(--color-brand);
 }
 

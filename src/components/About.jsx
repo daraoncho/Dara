@@ -3,8 +3,8 @@ import about from "../styles/About.module.css";
 const About = () => {
   return (
     <div id="about_part">
-      <div className={about.full_height}>
-        <section id="about" className="lg:px-5">
+      <section id="about" className={about.full_height}>
+        <div className="lg:px-5">
           <div className="container">
             <div className="flex pb-4" data-aos="fade-up">
               <div className={about.aboutCol}>
@@ -203,8 +203,8 @@ const About = () => {
               </div>
             </div> */}
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
     </div>
   );
 };

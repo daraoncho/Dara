@@ -11,8 +11,8 @@ import bloggy from "../assets/img/bloggy_bg.webp";
 const Work = () => {
   return (
     <div id="work_part">
-      <div className={work.full_height}>
-        <section id="work" className="lg:px-5">
+      <section id="work" className={work.full_height}>
+        <div className="lg:px-5">
           <div className="container">
             <div className="flex pb-4" data-aos="fade-up">
               <div className="lg:col-span-8">
@@ -177,7 +177,8 @@ const Work = () => {
                   <div className={work.card_custom_content}>
                     <h4>Bloggy</h4>
                     <p className="pb-6">
-                      A personal blog website on School-Work-Life balance <br /> <br /> 
+                      A personal blog website on School-Work-Life balance <br />{" "}
+                      <br />
                     </p>
                     <p>Javascript, HTML / CSS</p>
                     <a
@@ -232,8 +233,8 @@ const Work = () => {
               </div>
             </div>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
     </div>
   );
 };
