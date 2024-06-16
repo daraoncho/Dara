@@ -98,7 +98,7 @@ const Experience = () => {
                         <ul className={about.bulletList}>
                           <li>
                             Developed and styled interactive web applications
-                            for Estate Management App using React and
+                            for Estate Management App using Typescript and
                             TailwindCSS
                           </li>
                           <li>

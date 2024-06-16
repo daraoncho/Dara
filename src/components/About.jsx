@@ -60,7 +60,7 @@ const About = () => {
                 </div>
                 <p className="mt-5">
                   Outside of work, I&lsquo;m interested in following the developments of technology. 
-                  I also play a lot of video games, am a huge fan of movies, and make TikToks.
+                  I also play a lot of video games, I&lsquo;m a huge fan of movies, and make TikToks.
                 </p>
               </div>
             </div>

@@ -38,7 +38,7 @@ const Home = () => {
                   data-aos="fade-up"
                   data-aos-delay="1000"
                 >
-                  I&lsquo;m an aspiring software engineer and game developer
+                  I&lsquo;m an aspiring software engineer
                   based in Nigeria. I&lsquo;m fascinated by large-scale
                   inventions and products that take things to the next level and
                   impact people&lsquo;s lives!.
