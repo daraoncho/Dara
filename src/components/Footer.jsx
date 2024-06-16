@@ -1,6 +1,7 @@
 import { FaGithub } from "react-icons/fa";
 import { IoMailOutline } from "react-icons/io5";
 import { FaInstagram } from "react-icons/fa";
+import { FaLinkedinIn } from "react-icons/fa";
 
 import footerStyles from "../styles/Footer.module.css";
 
@@ -27,6 +28,9 @@ const Footer = () => {
                 </a>
                 <a href="https://www.instagram.com/daraoncho" className="mx-2">
                   <FaInstagram />
+                </a>
+                <a href="https://www.linkedin.com/in/me/" className="mx-2">
+                  <FaLinkedinIn />
                 </a>
               </div>
             </div>
