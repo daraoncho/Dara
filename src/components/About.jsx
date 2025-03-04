@@ -13,19 +13,24 @@ const About = () => {
               </div>
             </div>
 
-            <div className="col-span-12" data-aos="fade-up" data-aos-delay="400">
+            <div
+              className="col-span-12"
+              data-aos="fade-up"
+              data-aos-delay="400"
+            >
               <div className={`${about.aboutMe} ${about.shadow_effect}`}>
                 <h4 className={about.text_brand}>/about me</h4>
                 <p className={about.description}>
-                  My name is Adebayo Oluwadarasimi. I&lsquo;m currently a final year
-                  <span className="font-semibold"> Computer Science</span> major at
+                  I&lsquo;m Adebayo Oluwadarasimi, a high-distinction
+                  <span className="font-semibold"> Computer Science </span>
+                  Graduate from
                   <span className={about.link_custom}>
                     <a href="https://eksu.edu.ng/"> Ekiti State University</a>
-                  </span>. At the same time, I am currently working as a 
-                  <span className="font-semibold"> Software Development Engineer</span> at 
-                  <span className={about.link_custom}>
-                    <a href="https://tagdev.tech/"> TagDev Technologies</a>
-                  </span>.
+                  </span>
+                  . I&lsquo;m also the founder of
+                  <span className="font-semibold"> StudyBuddy</span>, a platform
+                  empowering over 1,000 students to excel academically while
+                  providing them opportunities to earn income.
                 </p>
                 <div>
                   <p className="mb-5">
@@ -33,34 +38,83 @@ const About = () => {
                   </p>
                   <ul className={about.tech_stack}>
                     <li>
-                      <span className={about.bullet} data-aos="fade-up" data-aos-delay="550">▹</span>
-                      <span data-aos="fade-up" data-aos-delay="600">ReactJS</span>
+                      <span
+                        className={about.bullet}
+                        data-aos="fade-up"
+                        data-aos-delay="550"
+                      >
+                        ▹
+                      </span>
+                      <span data-aos="fade-up" data-aos-delay="600">
+                        ReactJS
+                      </span>
                     </li>
                     <li>
-                      <span className={about.bullet} data-aos="fade-up" data-aos-delay="650">▹</span>
-                      <span data-aos="fade-up" data-aos-delay="700">Python</span>
+                      <span
+                        className={about.bullet}
+                        data-aos="fade-up"
+                        data-aos-delay="650"
+                      >
+                        ▹
+                      </span>
+                      <span data-aos="fade-up" data-aos-delay="700">
+                        Python
+                      </span>
                     </li>
                     <li>
-                      <span className={about.bullet} data-aos="fade-up" data-aos-delay="750">▹</span>
-                      <span data-aos="fade-up" data-aos-delay="800">NodeJS</span>
+                      <span
+                        className={about.bullet}
+                        data-aos="fade-up"
+                        data-aos-delay="750"
+                      >
+                        ▹
+                      </span>
+                      <span data-aos="fade-up" data-aos-delay="800">
+                        NodeJS
+                      </span>
                     </li>
                     <li>
-                      <span className={about.bullet} data-aos="fade-up" data-aos-delay="850">▹</span>
-                      <span data-aos="fade-up" data-aos-delay="900">Firebase</span>
+                      <span
+                        className={about.bullet}
+                        data-aos="fade-up"
+                        data-aos-delay="850"
+                      >
+                        ▹
+                      </span>
+                      <span data-aos="fade-up" data-aos-delay="900">
+                        Firebase
+                      </span>
                     </li>
                     <li>
-                      <span className={about.bullet} data-aos="fade-up" data-aos-delay="900">▹</span>
-                      <span data-aos="fade-up" data-aos-delay="950">Javascript ES6+</span>
+                      <span
+                        className={about.bullet}
+                        data-aos="fade-up"
+                        data-aos-delay="900"
+                      >
+                        ▹
+                      </span>
+                      <span data-aos="fade-up" data-aos-delay="950">
+                        Javascript ES6+
+                      </span>
                     </li>
                     <li>
-                      <span className={about.bullet} data-aos="fade-up" data-aos-delay="950">▹</span>
-                      <span data-aos="fade-up" data-aos-delay="1000">HTML & CSS</span>
+                      <span
+                        className={about.bullet}
+                        data-aos="fade-up"
+                        data-aos-delay="950"
+                      >
+                        ▹
+                      </span>
+                      <span data-aos="fade-up" data-aos-delay="1000">
+                        HTML & CSS
+                      </span>
                     </li>
                   </ul>
                 </div>
                 <p className="mt-5">
-                  Outside of work, I&lsquo;m interested in following the developments of technology. 
-                  I also play a lot of video games, I&lsquo;m a huge fan of movies, and make TikToks.
+                  Outside of work, I&lsquo;m interested in following the
+                  developments of technology. I also play a lot of video games,
+                  I&lsquo;m a huge fan of movies, and make TikToks.
                 </p>
               </div>
             </div>

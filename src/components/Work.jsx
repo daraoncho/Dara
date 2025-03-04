@@ -37,10 +37,10 @@ const Work = () => {
                       their courses while still giving them an opportunity to
                       make money. <br /> <br />
                     </p>
-                    <p>ReactJS, Firebase, TailwindCSS, </p>
+                    <p>Node.js(Express.js), ReactVITE, Firebase, LLM </p>
                     <a
                       className={about.link_custom}
-                      href="https://schoolbuddy.netlify.app"
+                      href="https://gostudybuddy.com"
                     >
                       Check out
                     </a>
@@ -74,7 +74,7 @@ const Work = () => {
                       Smooth and swift dynamic & interactive UI, authentication,
                       storage, chat and match systems
                     </p>
-                    <p>ReactVite, NodeJS, Firebase, TailwindCSS</p>
+                    <p>Node.js, React.js, Firebase, TailwindCSS</p>
                     <a
                       className={about.link_custom}
                       href="https://meetproto.netlify.app"

@@ -29,7 +29,7 @@ const Footer = () => {
                 <a href="https://www.instagram.com/daraoncho" className="mx-2">
                   <FaInstagram />
                 </a>
-                <a href="https://www.linkedin.com/in/me/" className="mx-2">
+                <a href="https://www.linkedin.com/in/oluwadarasimi-adebayo-446197311/" className="mx-2">
                   <FaLinkedinIn />
                 </a>
               </div>

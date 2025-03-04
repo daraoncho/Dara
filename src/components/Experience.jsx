@@ -29,27 +29,29 @@ const Experience = () => {
                     >
                       <h4>Lead Engineer</h4>
                       <span className={about.text_brand}>
-                        HashTag (Oct 2023 - Present)
+                        HashTag (Oct 2024 - March 2025)
                       </span>
                       <div className="mb-0">
                         <ul className={about.bulletList}>
                           <li>
                             Build, style, and ship high-quality websites, design
-                            systems, and cross platform digital experiences for
-                            a diverse array of clients using technologies such
-                            as JavaScript, TypeScript, React, TailwindCSS,
-                            NodeJS, Contentful, and more
+                            systems, and cross-platform digital experiences
+                            using React, TypeScript, TailwindCSS, and Node.js.
                           </li>
                           <li>
-                            Provide leadership within engineering department
-                            through close collaboration, building tools to
-                            improve developer experience, and mentorship
+                            Architected and implemented CMS platforms, REST
+                            APIs, and CI/CD pipelines to fulfill business needs.
+                          </li>
+                          <li>
+                            Collaborate with designers, product managers, and
+                            engineers to transform creative concepts into
+                            refined digital experiences.
                           </li>
                         </ul>
                       </div>
                     </div>
                   </a>
-                  <a
+                  {/* <a
                     href="https://eksu.edu.ng"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -79,7 +81,7 @@ const Experience = () => {
                         </ul>
                       </div>
                     </div>
-                  </a>
+                  </a> */}
                   <a
                     href="https://tagdev.tech"
                     target="_blank"
@@ -92,24 +94,64 @@ const Experience = () => {
                     >
                       <h4>Junior Software Developer</h4>
                       <span className={about.text_brand}>
-                        TagDev Technologies (Jan 2024 - Jun 2024)
+                        TagDev Technologies (Jan 2024 - Jul 2024)
                       </span>
                       <div className="mb-0">
                         <ul className={about.bulletList}>
                           <li>
-                            Developed and styled interactive web applications
-                            for Estate Management App using Typescript and
-                            TailwindCSS
+                            Developed an Estate Management App using React and
+                            TailwindCSS, improving user engagement by 40%.
                           </li>
                           <li>
-                            Collaborated and supported the engineers in the
-                            integration of the Estate Management website into a
-                            web mobile app
+                            Designed interactive, responsive web applications
+                            with a focus on user experience and performance
+                            optimization.
+                          </li>
+                          <li>
+                            Integrated web-to-mobile functionalities, enhancing
+                            accessibility and cross-platform use.
                           </li>
                         </ul>
                       </div>
                     </div>
                   </a>
+
+                  <a
+                    href="https://eksu.edu.ng"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-aos="fade-up"
+                    data-aos-delay="900"
+                  >
+                    <div
+                      className={`${about.aboutExp} ${about.bg_base} ${about.shadow_effect}`}
+                    >
+                      <h4>Software Development Engineer</h4>
+                      <span className={about.text_brand}>
+                        Ekiti State University (Aug 2023 - Dec 2023)
+                      </span>
+                      <div className="mb-0">
+                        <ul className={about.bulletList}>
+                          <li>
+                            Led a team of 5 student developers to develop and
+                            implement departmental websites, increasing
+                            efficiency by 25%.
+                          </li>
+                          <li>
+                            Built student portals and academic resource
+                            integrations, enhancing accessibility for thousands
+                            of students.
+                          </li>
+                          <li>
+                            Developed community tech solutions, providing free
+                            website development for non-profits and small
+                            businesses.
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </a>
+
                   <a
                     href="https://cloudware.ng"
                     target="_blank"
@@ -127,14 +169,17 @@ const Experience = () => {
                       <div className="mb-0">
                         <ul className={about.bulletList}>
                           <li>
-                            Collaborated with brilliant minds of the company in
-                            the development of large-scale and impactful
-                            products for clients, and governmental organisations
+                            Contributed to the development of large-scale
+                            software solutions for government and enterprise
+                            clients.
                           </li>
                           <li>
-                            Contributed in the research and contributed in
-                            educating and enlightening young minds on the beauty
-                            of technology and its impact
+                            Conducted technical research and mentorship
+                            programs, educating new developers.
+                          </li>
+                          <li>
+                            Assisted in projects that improved efficiency in
+                            public sector technology adoption.
                           </li>
                         </ul>
                       </div>
