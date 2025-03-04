@@ -1,7 +1,7 @@
 import { FaGithub } from "react-icons/fa";
 import work from "../styles/Work.module.css";
 import about from "../styles/About.module.css";
-import studyBud from "../assets/img/studyBud_bg.webp";
+import studyBud from "../assets/img/studyBuddy_bg.webp";
 import meet from "../assets/img/meet_bg.webp";
 import darasBG from "../assets/img/daras_bg.webp";
 import csc from "../assets/img/cscTest_bg.webp";
