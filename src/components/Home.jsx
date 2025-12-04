@@ -38,10 +38,10 @@ const Home = () => {
                   data-aos="fade-up"
                   data-aos-delay="1000"
                 >
-                  I&lsquo;m an aspiring software engineer
+                  I&lsquo;m a software engineer
                   based in Nigeria. I&lsquo;m fascinated by large-scale
                   inventions and products that take things to the next level and
-                  impact people&lsquo;s lives!.
+                  impact people&lsquo;s lives!. I&lsquo;ve contributed to major feature launches, services as well as apps that have 2,000+ installs.
                 </p>
                 <div data-aos="fade-up" data-aos-delay="1100">
                   <a

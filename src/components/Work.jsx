@@ -7,6 +7,10 @@ import darasBG from "../assets/img/daras_bg.webp";
 import csc from "../assets/img/cscTest_bg.webp";
 import aioBG from "../assets/img/allInOne_bg2.webp";
 import bloggy from "../assets/img/bloggy_bg.webp";
+import cashludo from "../assets/img/cashludo-bg.png";
+import aqg from "../assets/img/aqg-bg.png";
+import snapstalgia from "../assets/img/snapstalgia.jpg";
+import wordrush from "../assets/img/wordrush.png";
 
 const Work = () => {
   return (
@@ -23,7 +27,11 @@ const Work = () => {
 
             <div className="flex flex-wrap gap-y-6 gap-x-6">
               {/* project 1 */}
-              <div className={work.project_card} data-aos="fade-up" data-aos-delay="400">
+              <div
+                className={work.project_card}
+                data-aos="fade-up"
+                data-aos-delay="400"
+              >
                 <div
                   className={`${work.card_custom} ${about.bg_base} ${about.shadow_effect}`}
                 >
@@ -33,9 +41,9 @@ const Work = () => {
                   <div className={work.card_custom_content}>
                     <h4>StudyBuddy</h4>
                     <p className="pb-4">
-                      A platform and community that helps students excel in
-                      their courses while still giving them an opportunity to
-                      make money. <br /> <br />
+                      A platform and community with over 2500+ students that
+                      helps students excel in their courses while still giving
+                      them an opportunity to make money. <br /> <br />
                     </p>
                     <p>Node.js(Express.js), ReactVITE, Firebase, LLM </p>
                     <a
@@ -58,6 +66,133 @@ const Work = () => {
               <div
                 className={work.project_card}
                 data-aos="fade-up"
+                data-aos-delay="400"
+              >
+                <div
+                  className={`${work.card_custom} ${about.bg_base} ${about.shadow_effect}`}
+                >
+                  <div className={work.card_custom_image}>
+                    <img className="rounded-[16px]" src={cashludo} alt="" />
+                  </div>
+                  <div className={work.card_custom_content}>
+                    <br />
+                    <br />
+                    <h4>CashLudo</h4>
+                    <p className="pb-6">
+                      Having currently over 1000+ players, Play your favorite
+                      Ludo game in an exciting and engaging new format with
+                      friends, and other real players from all over! <br />{" "}
+                      <br />
+                    </p>
+                    <p>Socket IO, NodeJS, ReactNative, ReactVITE</p>
+                    <a
+                      className={about.link_custom}
+                      href="https://cashludo.app"
+                    >
+                      Check out
+                    </a>
+                    <a
+                      className={`${work.card_footer} ${about.shadow_effect}`}
+                      href="https://github.com/daraoncho/CashLudo_"
+                    >
+                      <FaGithub className={work.external_link} />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex flex-wrap gap-y-6 gap-x-6">
+              {/* project 3 */}
+              <div
+                className={work.project_card}
+                data-aos="fade-up"
+                data-aos-delay="600"
+              >
+                <div
+                  className={`${work.card_custom} ${about.bg_base} ${about.shadow_effect}`}
+                >
+                  <div className={work.card_custom_image}>
+                    <img
+                      className="rounded-[16px]"
+                      src={snapstalgia}
+                      alt="snapstalgia project image"
+                    />
+                  </div>
+                  <div className={work.card_custom_content}>
+                    <h4>Snapstalgia</h4>
+                    <p className="pb-4">
+                      A fun, interactive web app that simulates the nostalgic
+                      experience of a retro photo booth. Users can either take 3
+                      photos using their device camera or upload 3 existing
+                      photos to create a vintage-style photo strip. The app
+                      merges the images and optional text into a single
+                      downloadable image, stylized with vintage effects.
+                    </p>
+                    <p>Node.js, React.js, Firebase, TailwindCSS</p>
+                    <a
+                      className={about.link_custom}
+                      href="https://snapstalgia.netlify.app"
+                    >
+                      Check out
+                    </a>
+                    <a
+                      className={`${work.card_footer} ${about.shadow_effect}`}
+                      href="https://github.com/daraoncho/Snapstalgia_"
+                    >
+                      <FaGithub className={work.external_link} />
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* project 4  */}
+              <div
+                className={work.project_card}
+                data-aos="fade-up"
+                data-aos-delay="700"
+              >
+                <div
+                  className={`${work.card_custom} ${about.bg_base} ${about.shadow_effect}`}
+                >
+                  <div className={work.card_custom_image}>
+                    <img className="rounded-[16px]" src={wordrush} alt="wordrush project image" />
+                  </div>
+                  <div className={work.card_custom_content}>
+                    <br />
+
+                    <h4>WordRush</h4>
+                    <p className="pb-4">
+                      Childhood Nostalgia &quot;Name - Animals - Places - Foods -
+                      Things&quot; Game.
+                      <br />
+                      Play live with friends as a random letter is chosen and
+                      you race against the clock to fill in categories. Unique
+                      answers earn more points, so bring your A-game and your
+                      A-words!
+                    </p>
+                    <p>NodeJS(Express.js), ReactVITE, Firebase</p>
+                    <a
+                      className={about.link_custom}
+                      href="https://word-rush-game.netlify.app"
+                    >
+                      Check out
+                    </a>
+                    <a
+                      className={`${work.card_footer} ${about.shadow_effect}`}
+                      href="https://github.com/daraoncho/WordRush_"
+                    >
+                      <FaGithub className={work.external_link} />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="flex flex-wrap gap-y-6 gap-x-6">
+              {/* project 5 */}
+              <div
+                className={work.project_card}
+                data-aos="fade-up"
                 data-aos-delay="600"
               >
                 <div
@@ -69,9 +204,9 @@ const Work = () => {
                   <div className={work.card_custom_content}>
                     <h4>Meet</h4>
                     <p className="pb-4">
-                      Meet is the first official Nigeria dating platform that
-                      find and connect you with your match in just few steps.
-                      Smooth and swift dynamic & interactive UI, authentication,
+                      Meet is a Nigeria dating platform that allows you to find
+                      and connect you with your match in just few steps. Smooth
+                      and swift dynamic & interactive UI, authentication,
                       storage, chat and match systems
                     </p>
                     <p>Node.js, React.js, Firebase, TailwindCSS</p>
@@ -90,11 +225,58 @@ const Work = () => {
                   </div>
                 </div>
               </div>
+
+              {/* project 6  */}
+              <div
+                className={work.project_card}
+                data-aos="fade-up"
+                data-aos-delay="700"
+              >
+                <div
+                  className={`${work.card_custom} ${about.bg_base} ${about.shadow_effect}`}
+                >
+                  <div className={work.card_custom_image}>
+                    <img className="rounded-[16px]" src={aqg} alt="" />
+                  </div>
+                  <div className={work.card_custom_content}>
+                    <br />
+
+                    <h4>Automated Questions Generation (AQG)</h4>
+                    <p className="pb-4">
+                      An Automated Questions Generator for transforming your
+                      notes into Interactive Questions. Its usage of Large
+                      Language Models (LLMs) to automatically generate
+                      assessment questions from raw educational content such as
+                      lecture notes, textbooks, or transcripts.
+                      <br />
+                      <br />
+                      <br />
+                    </p>
+                    <p>Python</p>
+                    <a
+                      className={about.link_custom}
+                      href="https://automated-questions-generation-llm.onrender.com"
+                    >
+                      Check out
+                    </a>
+                    <a
+                      className={`${work.card_footer} ${about.shadow_effect}`}
+                      href="https://github.com/daraoncho/Automated-Questions-Generation-LLM_"
+                    >
+                      <FaGithub className={work.external_link} />
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div className="flex flex-wrap gap-y-6 gap-x-6 mt-4">
               {/* project 3 */}
-              <div className={work.project_card} data-aos="fade-up" data-aos-delay="400">
+              <div
+                className={work.project_card}
+                data-aos="fade-up"
+                data-aos-delay="400"
+              >
                 <div
                   className={`${work.card_custom} ${about.bg_base} ${about.shadow_effect}`}
                 >
@@ -148,7 +330,7 @@ const Work = () => {
                       GraphQL & Contentful and negotiation and tracking done
                       with API
                     </p>
-                    <p>ReactVite, Contentful, GraphQL</p>
+                    <p>ReactVite, Sanity, GraphQL</p>
                     <a
                       className={about.link_custom}
                       href="https://darascollection.com"
@@ -167,7 +349,11 @@ const Work = () => {
             </div>
             <div className="flex flex-wrap gap-y-6 gap-x-6 mt-4">
               {/* project 5 */}
-              <div className={work.project_card} data-aos="fade-up" data-aos-delay="400">
+              <div
+                className={work.project_card}
+                data-aos="fade-up"
+                data-aos-delay="400"
+              >
                 <div
                   className={`${work.card_custom} ${about.bg_base} ${about.shadow_effect}`}
                 >
@@ -215,7 +401,7 @@ const Work = () => {
                       All-In-One is a small static linktree webpage i created
                       with links to my social platforms.
                     </p>
-                    <p>Javascript, HTML / CSS</p>
+                    <p>ReactJS, Framer Motion</p>
                     <a
                       className={about.link_custom}
                       href="https://dara-links.netlify.app"

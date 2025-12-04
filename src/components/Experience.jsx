@@ -27,20 +27,20 @@ const Experience = () => {
                     <div
                       className={`${about.aboutExp} ${about.bg_base} ${about.shadow_effect}`}
                     >
-                      <h4>Lead Engineer</h4>
+                      <h4>Founder</h4>
                       <span className={about.text_brand}>
                         HashTag (Oct 2024 - March 2025)
                       </span>
                       <div className="mb-0">
                         <ul className={about.bulletList}>
                           <li>
-                            Build, style, and ship high-quality websites, design
+                            Build, style, and ship high-quality websites, mobile apps and solutions, design
                             systems, and cross-platform digital experiences
                             using React, TypeScript, TailwindCSS, and Node.js.
                           </li>
                           <li>
                             Architected and implemented CMS platforms, REST
-                            APIs, and CI/CD pipelines to fulfill business needs.
+                            APIs, and software engineering architectures to fulfill business needs.
                           </li>
                           <li>
                             Collaborate with designers, product managers, and
