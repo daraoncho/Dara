@@ -129,7 +129,7 @@ const Work = () => {
                       merges the images and optional text into a single
                       downloadable image, stylized with vintage effects.
                     </p>
-                    <p>Node.js, React.js, Firebase, TailwindCSS</p>
+                    <p>React.js, TailwindCSS</p>
                     <a
                       className={about.link_custom}
                       href="https://snapstalgia.netlify.app"

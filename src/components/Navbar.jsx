@@ -3,6 +3,7 @@ import nav from "../styles/Navbar.module.css";
 import avatar from "../assets/img/DaraAvatar.webp";
 import { RiMenu2Line } from "react-icons/ri";
 import { RxCross2 } from "react-icons/rx";
+import { GameToggle } from "../features/thought-fragments";
 
 const Navbar = () => {
   const [activeLink, setActiveLink] = useState('');
@@ -32,7 +33,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <nav className={nav.navbar}>
+      <nav className={nav.navbar} data-game-navbar>
         <div className={nav.navbarContainer}>
           <a href="#">
             <span>Dara</span>
@@ -100,6 +101,7 @@ const Navbar = () => {
                 </a>
               </li> */}
             </ul>
+            <GameToggle variant="sidebar" />
           </div>
         </div>
       </nav>

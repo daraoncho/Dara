@@ -1,0 +1,56 @@
+.bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 902;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 12px 16px max(12px, env(safe-area-inset-bottom));
+  pointer-events: none;
+  touch-action: none;
+}
+
+.dpad {
+  display: flex;
+  gap: 10px;
+  pointer-events: all;
+}
+
+.btn,
+.jumpBtn,
+.downBtn {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  border: 1px solid rgba(224, 247, 128, 0.35);
+  background: rgba(0, 0, 0, 0.82);
+  color: var(--color-brand);
+  font-size: 20px;
+  font-family: monospace;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  transition: background 0.15s, transform 0.1s;
+}
+
+.jumpBtn,
+.downBtn {
+  pointer-events: all;
+}
+
+.btn:active,
+.jumpBtn:active,
+.downBtn:active {
+  background: rgba(224, 247, 128, 0.12);
+  transform: scale(0.96);
+}
+
+@media (min-width: 992px) {
+  .bar {
+    display: none;
+  }
+}

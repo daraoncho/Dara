@@ -1,0 +1,44 @@
+.panel {
+  position: fixed;
+  z-index: 1035;
+  background: rgba(0, 0, 0, 0.94);
+  border: 1px solid rgba(224, 247, 128, 0.35);
+  border-radius: 10px;
+  padding: 14px 18px 12px;
+  width: 220px;
+  backdrop-filter: blur(12px);
+  pointer-events: all;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  animation: portalIn 0.28s ease;
+}
+
+@media (min-width: 992px) {
+  .panel {
+    left: calc(var(--sidebar-width, 240px) + 16px);
+    bottom: 40px;
+  }
+}
+
+@media (max-width: 991px) {
+  .panel {
+    left: 16px;
+    top: 118px;
+  }
+}
+
+@keyframes portalIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .panel {
+    animation: none;
+  }
+}

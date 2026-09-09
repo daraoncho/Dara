@@ -5,19 +5,28 @@ import Experience from "./components/Experience";
 import Work from "./components/Work";
 import Footer from "./components/Footer";
 import app from "./styles/Navbar.module.css";
+import {
+  GameModeProvider,
+  ThoughtFragmentsGame,
+  GameToggle,
+} from "./features/thought-fragments";
 
 function App() {
   return (
-    <div className="App">
-      <Navbar />
-      <div className={app.content_wrapper}>
-        <Home />
-        <About />
-        <Experience />
-        <Work />
-        <Footer />
+    <GameModeProvider>
+      <div className="App">
+        <Navbar />
+        <GameToggle variant="floating" />
+        <ThoughtFragmentsGame />
+        <div id="portfolio-content" className={app.content_wrapper}>
+          <Home />
+          <About />
+          <Experience />
+          <Work />
+          <Footer />
+        </div>
       </div>
-    </div>
+    </GameModeProvider>
   );
 }
 
