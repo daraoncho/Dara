@@ -1,4 +1,4 @@
-/links    https://dara-links.netlify.app/    200
-/links/*  https://dara-links.netlify.app/:splat    200
+/links      https://dara-links.netlify.app/links/       200
+/links/*    https://dara-links.netlify.app/links/:splat  200
 
 /*    /index.html   200
