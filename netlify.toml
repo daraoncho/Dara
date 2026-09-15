@@ -1,4 +1,9 @@
 [[redirects]]
+  from = "/links"
+  to = "https://dara-links.netlify.app/"
+  status = 200
+
+[[redirects]]
   from = "/links/*"
   to = "https://dara-links.netlify.app/:splat"
   status = 200
