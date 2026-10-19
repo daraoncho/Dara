@@ -1,0 +1,384 @@
+/*
+ * Day *** — master timeline (STORY_DAY_COUNT × loop).
+ * Regenerate: node src/features/growth-story/utils/printSurpriseBeatKeyframes.js
+ */
+
+.masterBeat {
+  animation-duration: calc(var(--story-day-count, 8) * var(--story-duration, 8s));
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.figureJumpWide {
+  animation-name: surpriseCelebrateJumpWide;
+}
+
+.figureJumpNarrow {
+  animation-name: surpriseCelebrateJumpNarrow;
+}
+
+.handCanWide {
+  animation-name: surpriseHandCanWide;
+}
+
+.handCanNarrow {
+  animation-name: surpriseHandCanNarrow;
+}
+
+.pourSuppressWide {
+  animation-name: surprisePourSuppressWide;
+}
+
+.pourSuppressNarrow {
+  animation-name: surprisePourSuppressNarrow;
+}
+
+.groundCanWide {
+  animation-name: surpriseGroundCanWide;
+}
+
+.groundCanNarrow {
+  animation-name: surpriseGroundCanNarrow;
+}
+
+.celebrateArmsWide {
+  animation-name: surpriseCelebrateArmsWide;
+}
+
+.celebrateArmsNarrow {
+  animation-name: surpriseCelebrateArmsNarrow;
+}
+
+.defaultArmsHideWide {
+  animation-name: surpriseDefaultArmsHideWide;
+}
+
+.defaultArmsHideNarrow {
+  animation-name: surpriseDefaultArmsHideNarrow;
+}
+
+.soakSuppressWide {
+  animation-name: surpriseSoakSuppressWide;
+}
+
+.soakSuppressNarrow {
+  animation-name: surpriseSoakSuppressNarrow;
+}
+
+.groundCanAnchor {
+  position: absolute;
+  bottom: 0;
+  left: var(--stop-left-px, 0);
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateX(-12px);
+}
+
+@keyframes surprisePourSuppressWide {
+  0%,
+  80.888% {
+    opacity: 1;
+  }
+  80.889%,
+  85.333% {
+    opacity: 0;
+  }
+  85.334%,
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes surprisePourSuppressNarrow {
+  0%,
+  80.555% {
+    opacity: 1;
+  }
+  80.556%,
+  86.222% {
+    opacity: 0;
+  }
+  86.223%,
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes surpriseHandCanWide {
+  0%,
+  81.11% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  81.111% {
+    opacity: 0;
+    transform: translate(2px, 6px);
+  }
+  85.778%,
+  100% {
+    opacity: 0;
+    transform: translate(2px, 6px);
+  }
+}
+
+@keyframes surpriseHandCanNarrow {
+  0%,
+  80.777% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  80.778% {
+    opacity: 0;
+    transform: translate(2px, 6px);
+  }
+  86.667%,
+  100% {
+    opacity: 0;
+    transform: translate(2px, 6px);
+  }
+}
+
+@keyframes surpriseGroundCanWide {
+  0%,
+  81.11% {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  81.111% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  85.777% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  85.778%,
+  100% {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+}
+
+@keyframes surpriseGroundCanNarrow {
+  0%,
+  80.777% {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  80.778% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  86.666% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  86.667%,
+  100% {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+}
+
+@keyframes surpriseCelebrateArmsWide {
+  0%,
+  81.11% {
+    opacity: 0;
+  }
+  81.111%,
+  85.778% {
+    opacity: 1;
+  }
+  85.779%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes surpriseCelebrateArmsNarrow {
+  0%,
+  80.777% {
+    opacity: 0;
+  }
+  80.778%,
+  86.667% {
+    opacity: 1;
+  }
+  86.668%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes surpriseDefaultArmsHideWide {
+  0%,
+  81.11% {
+    opacity: 1;
+  }
+  81.111%,
+  85.778% {
+    opacity: 0;
+  }
+  85.779%,
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes surpriseDefaultArmsHideNarrow {
+  0%,
+  80.777% {
+    opacity: 1;
+  }
+  80.778%,
+  86.667% {
+    opacity: 0;
+  }
+  86.668%,
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes surpriseCelebrateJumpWide {
+  0%,
+  81.11% {
+    transform: translateY(0);
+  }
+  81.556% {
+    transform: translateY(-16px);
+  }
+  81.902% {
+    transform: translateY(0px);
+  }
+  82.278% {
+    transform: translateY(-13px);
+  }
+  82.624% {
+    transform: translateY(0px);
+  }
+  83% {
+    transform: translateY(-11px);
+  }
+  83.347% {
+    transform: translateY(0px);
+  }
+  83.722% {
+    transform: translateY(-9px);
+  }
+  84.069% {
+    transform: translateY(0px);
+  }
+  84.444% {
+    transform: translateY(-8px);
+  }
+  84.791% {
+    transform: translateY(0px);
+  }
+  85.167% {
+    transform: translateY(-7px);
+  }
+  85.513% {
+    transform: translateY(0px);
+  }
+  85.778%,
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes surpriseCelebrateJumpNarrow {
+  0%,
+  80.777% {
+    transform: translateY(0);
+  }
+  81.222% {
+    transform: translateY(-16px);
+  }
+  81.569% {
+    transform: translateY(0px);
+  }
+  81.944% {
+    transform: translateY(-13px);
+  }
+  82.291% {
+    transform: translateY(0px);
+  }
+  82.667% {
+    transform: translateY(-11px);
+  }
+  83.013% {
+    transform: translateY(0px);
+  }
+  83.389% {
+    transform: translateY(-9px);
+  }
+  83.736% {
+    transform: translateY(0px);
+  }
+  84.111% {
+    transform: translateY(-8px);
+  }
+  84.458% {
+    transform: translateY(0px);
+  }
+  84.833% {
+    transform: translateY(-7px);
+  }
+  85.18% {
+    transform: translateY(0px);
+  }
+  85.556% {
+    transform: translateY(-6px);
+  }
+  85.902% {
+    transform: translateY(0px);
+  }
+  86.278% {
+    transform: translateY(-16px);
+  }
+  86.624% {
+    transform: translateY(0px);
+  }
+  86.667%,
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes surpriseSoakSuppressWide {
+  0%,
+  80.888% {
+    opacity: 1;
+  }
+  80.889%,
+  85.556% {
+    opacity: 0;
+  }
+  85.557%,
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes surpriseSoakSuppressNarrow {
+  0%,
+  80.555% {
+    opacity: 1;
+  }
+  80.556%,
+  86.444% {
+    opacity: 0;
+  }
+  86.445%,
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .masterBeat {
+    animation: none;
+  }
+}

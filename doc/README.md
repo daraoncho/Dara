@@ -6,6 +6,9 @@ This folder documents features, architecture, and phased work on the Dara portfo
 
 | Document | Description |
 |----------|-------------|
+| [growth-story/overview.md](./growth-story/overview.md) | Home growth narrative — days, beats, timeline, tuning |
+| [growth-story/playback-and-controls.md](./growth-story/playback-and-controls.md) | Story pace slider, `STORY_PLAYBACK` flags, CSS timing |
+| [pixel-portrait/overview.md](./pixel-portrait/overview.md) | Navbar pixel portrait, cursor flags, pointer repulsion |
 | [game-mode/overview.md](./game-mode/overview.md) | Thought Fragments game mode — product summary |
 | [game-mode/architecture.md](./game-mode/architecture.md) | Folder structure, data flow, and design decisions |
 | [game-mode/components.md](./game-mode/components.md) | UI components and responsibilities |
@@ -17,4 +20,5 @@ This folder documents features, architecture, and phased work on the Dara portfo
 
 - Feature code lives under `src/features/<feature-name>/`.
 - Shared portfolio sections remain in `src/components/`.
+- Cross-cutting UI constants may live under `src/constants/` (e.g. portrait view / cursor).
 - Phase docs record what shipped and what is planned next.

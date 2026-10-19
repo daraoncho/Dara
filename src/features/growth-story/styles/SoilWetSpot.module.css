@@ -1,0 +1,120 @@
+.root {
+  position: absolute;
+  left: 0;
+  pointer-events: none;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.soakBlob {
+  position: absolute;
+  width: 88px;
+  height: 18px;
+  margin-left: -44px;
+  margin-top: -8px;
+  border-radius: 50%;
+  opacity: 0;
+  transform: scale(0.15);
+  transform-origin: 50% 55%;
+  background: radial-gradient(
+    ellipse 68% 58% at 50% 48%,
+    rgba(118, 158, 148, 0.62) 0%,
+    rgba(92, 128, 118, 0.38) 42%,
+    rgba(72, 98, 88, 0.16) 68%,
+    rgba(58, 48, 38, 0) 100%
+  );
+  mix-blend-mode: multiply;
+  will-change: transform, opacity;
+}
+
+.soakWide {
+  animation: soilSoakWide var(--story-duration, 8s) ease-out infinite;
+}
+
+.soakNarrow {
+  animation: soilSoakNarrow var(--story-duration, 8s) ease-out infinite;
+}
+
+/* Pour stops ~64%; soak holds through 66% so dampness lingers briefly. */
+@keyframes soilSoakWide {
+  0%,
+  29.5% {
+    opacity: 0;
+    transform: scale(0.15);
+  }
+  32% {
+    opacity: 0.5;
+    transform: scale(0.38);
+  }
+  37% {
+    opacity: 0.68;
+    transform: scale(0.72);
+  }
+  43% {
+    opacity: 0.76;
+    transform: scale(0.96);
+  }
+  48% {
+    opacity: 0.78;
+    transform: scale(1);
+  }
+  48%,
+  66% {
+    opacity: 0.76;
+    transform: scale(1.03);
+  }
+  67.5% {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.15);
+  }
+}
+
+/* Pour stops ~72%; soak fades by 74%. */
+@keyframes soilSoakNarrow {
+  0%,
+  26.5% {
+    opacity: 0;
+    transform: scale(0.15);
+  }
+  29% {
+    opacity: 0.5;
+    transform: scale(0.38);
+  }
+  34% {
+    opacity: 0.68;
+    transform: scale(0.72);
+  }
+  40% {
+    opacity: 0.76;
+    transform: scale(0.96);
+  }
+  45% {
+    opacity: 0.78;
+    transform: scale(1);
+  }
+  45%,
+  74% {
+    opacity: 0.76;
+    transform: scale(1.03);
+  }
+  75.5% {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.15);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .soakWide,
+  .soakNarrow {
+    animation: none;
+    opacity: 0;
+  }
+}

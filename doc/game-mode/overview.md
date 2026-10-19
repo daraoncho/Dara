@@ -18,7 +18,7 @@ Gameplay spans four sections with **one spark each**, plus a **finish door** at 
 
 Touching the door before all sparks are collected shows: *Not yet; there are still thoughts left to find.*
 
-Scroll is clamped to the active stage while game mode is on. Portfolio content dims slightly so ledges stand out.
+Scroll is clamped to the active stage while game mode is on. Portfolio content dims slightly so ledges stand out. The **Home growth story** unmounts while game mode is active (`Home.jsx` + `useGameModeContext`) so it does not compete with gameplay or animations.
 
 ## Player experience
 

@@ -1,0 +1,93 @@
+.beatRoot {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.sitAnchor {
+  position: absolute;
+  bottom: 0;
+  left: var(--stop-left-px, 0px);
+  display: flex;
+  align-items: flex-end;
+  transform: translateY(0);
+  opacity: 0;
+}
+
+.caption {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 2.35rem 0 0;
+  font-size: 0.6875rem;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: rgba(182, 203, 206, 0.72);
+  white-space: nowrap;
+  text-align: center;
+  opacity: 0;
+  width: max-content;
+  max-width: 100%;
+}
+
+.beatFade.beatAnimate {
+  animation-duration: calc(var(--story-day-count, 4) * var(--story-duration, 8s));
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.beatDay35Wide {
+  animation-name: storyBeatDay35Wide;
+}
+
+.beatDay35Narrow {
+  animation-name: storyBeatDay35Narrow;
+}
+
+/* MUST match StoryDayHeadline storyDay5 (Day 35). */
+@keyframes storyBeatDay35Wide {
+  0%,
+  52.888% {
+    opacity: 0;
+  }
+  53.778% {
+    opacity: 1;
+  }
+  63.111% {
+    opacity: 1;
+  }
+  63.556% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes storyBeatDay35Narrow {
+  0%,
+  53.555% {
+    opacity: 0;
+  }
+  54.444% {
+    opacity: 1;
+  }
+  64% {
+    opacity: 1;
+  }
+  64.444% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .beatDay35Wide,
+  .beatDay35Narrow {
+    animation: none;
+    opacity: 0;
+  }
+}

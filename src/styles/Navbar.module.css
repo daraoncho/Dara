@@ -9,19 +9,14 @@
   box-shadow: -5px 0px 6px 9px rgba(202,189,189,0.75);
 }
 
-.navbarContainer a {
-  @apply lg:mb-4 lg:mx-auto flex justify-center items-center;
+.brand {
+  @apply lg:mb-4 lg:mx-auto flex justify-center items-center flex-col;
 }
 
-.navbarContainer span {
+.brandName {
   @apply font-bold block lg:hidden;
   color: var(--color-heading);
   font-weight: 700;
-}
-
-.navbarContainer img {
-  @apply hidden lg:block mb-5 rounded-full h-[200px];
-  border: 8px var(--color-base2) solid;
 }
 
 .menuButton {
@@ -39,10 +34,18 @@
 
 .navbarNav ul {
   @apply lg:flex lg:flex-col lg:text-center lg:ml-auto;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.showMenu ul {
+  @apply flex flex-col;
+  gap: 1rem;
 }
 
 .navbarNav .navItem {
-  margin-bottom: 1rem; /* Add bottom margin to each nav item */
+  margin: 0;
 }
 
 .navbarNav .navLink {
@@ -72,6 +75,14 @@
 }
 
 @media (min-width: 992px) {
+  .navbarNav {
+    margin-top: 0.75rem;
+  }
+
+  .navbarNav ul {
+    gap: 2rem;
+  }
+
   .navbar {
     min-height: 100vh;
     width: var(--sidebar-width);

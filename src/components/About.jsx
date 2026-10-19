@@ -46,7 +46,7 @@ const About = () => {
                         ▹
                       </span>
                       <span data-aos="fade-up" data-aos-delay="600">
-                        ReactJS
+                        React.js
                       </span>
                     </li>
                     <li>
@@ -58,7 +58,7 @@ const About = () => {
                         ▹
                       </span>
                       <span data-aos="fade-up" data-aos-delay="700">
-                        Python
+                        Typescript
                       </span>
                     </li>
                     <li>
@@ -70,7 +70,7 @@ const About = () => {
                         ▹
                       </span>
                       <span data-aos="fade-up" data-aos-delay="800">
-                        NodeJS
+                        Node.js
                       </span>
                     </li>
                     <li>
@@ -82,7 +82,7 @@ const About = () => {
                         ▹
                       </span>
                       <span data-aos="fade-up" data-aos-delay="900">
-                        Firebase
+                        Python
                       </span>
                     </li>
                     <li>

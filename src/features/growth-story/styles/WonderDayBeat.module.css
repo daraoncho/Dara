@@ -1,0 +1,87 @@
+/*
+ * Wonder day — still figure at the mound (master timeline).
+ * Regenerate: node src/features/growth-story/utils/printWonderDayBeatKeyframes.js
+ */
+
+.masterBeat {
+  animation-duration: calc(var(--story-day-count, 9) * var(--story-duration, 8s));
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.wonderStandAnchor {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 4;
+  display: flex;
+  align-items: flex-end;
+  pointer-events: none;
+  overflow: visible;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(2px)
+    translateX(
+      calc(-1 * var(--walk-travel, 0px) - var(--wonder-extra-left, 14px))
+    );
+  will-change: opacity, visibility;
+}
+
+.wonderShowWide {
+  animation-name: wonderProtagonistShowWide;
+}
+
+.wonderShowNarrow {
+  animation-name: wonderProtagonistShowNarrow;
+}
+
+@keyframes wonderProtagonistShowWide {
+  0%,
+  86.221% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  86.222% {
+    opacity: 1;
+    visibility: visible;
+  }
+  96.888% {
+    opacity: 1;
+    visibility: visible;
+  }
+  96.889%,
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes wonderProtagonistShowNarrow {
+  0%,
+  86.888% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  86.889% {
+    opacity: 1;
+    visibility: visible;
+  }
+  97.777% {
+    opacity: 1;
+    visibility: visible;
+  }
+  97.778%,
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wonderShowWide,
+  .wonderShowNarrow {
+    animation: none;
+    opacity: 0;
+    visibility: hidden;
+  }
+}

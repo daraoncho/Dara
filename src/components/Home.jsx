@@ -1,8 +1,12 @@
 import home from "../styles/Home.module.css";
+import { GrowthStoryStage } from "../features/growth-story";
+import { useGameModeContext } from "../features/thought-fragments";
 import { IoMailOutline } from "react-icons/io5";
 import Typewriter from "typewriter-effect";
 
 const Home = () => {
+  const { isActive: gameModeActive } = useGameModeContext();
+
   return (
     <div id="home_part">
       <section id="home" className={home.full_height}>
@@ -10,6 +14,7 @@ const Home = () => {
           <div className="container mx-auto">
             <div className="grid grid-cols-1">
               <div className={home.homeCol}>
+                {!gameModeActive ? <GrowthStoryStage /> : null}
                 <h1 className={home.intro} data-aos="fade-up">
                   <Typewriter
                     options={{
@@ -39,7 +44,7 @@ const Home = () => {
                   data-aos-delay="1000"
                 >
                   I&lsquo;m a software engineer
-                  based in Nigeria. I&lsquo;m fascinated by large-scale
+                  based in Lagos. I&lsquo;m fascinated by large-scale
                   inventions and products that take things to the next level and
                   impact people&lsquo;s lives!. I&lsquo;ve contributed to major feature launches, services as well as apps that have 2,000+ installs.
                 </p>

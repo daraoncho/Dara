@@ -1,0 +1,187 @@
+.root {
+  position: relative;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.figureLift {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  will-change: transform;
+}
+
+.layer {
+  display: block;
+}
+
+.defaultArmsPanel {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.defaultArmsSvg {
+  display: block;
+}
+
+.celebrateArms {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 3;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.legGroupLeft,
+.legGroupRight {
+  transform-box: fill-box;
+  transform-origin: 50% 0%;
+}
+
+.wonderLookUp {
+  transform-box: view-box;
+  transform-origin: 39px 49px;
+  /* Profile faces left — positive rotate lifts chin, forehead toward the tree. */
+  transform: rotate(var(--wonder-head-look-up-deg, 18deg));
+}
+
+.wonderLookUp .eyeGaze {
+  transform: translate(
+    calc(-0.04 * var(--wonder-head-look-up-num, 18) * 1px),
+    calc(-0.085 * var(--wonder-head-look-up-num, 18) * 1px)
+  );
+}
+
+.wonderLookUp .browLine {
+  stroke: rgba(28, 22, 18, 0.55);
+  stroke-width: 0.9;
+  stroke-linecap: round;
+}
+
+.wonderSmile {
+  pointer-events: none;
+}
+
+.storyAnimate .legGroupLeft {
+  animation: legStepLeft var(--story-duration, 8s) linear infinite;
+}
+
+.storyAnimate .legGroupRight {
+  animation: legStepRight var(--story-duration, 8s) linear infinite;
+}
+
+@keyframes legStepLeft {
+  0%,
+  4% {
+    transform: rotate(0deg);
+  }
+  5% {
+    transform: rotate(9deg);
+  }
+  6.5% {
+    transform: rotate(-5deg);
+  }
+  8% {
+    transform: rotate(9deg);
+  }
+  9.5% {
+    transform: rotate(-5deg);
+  }
+  11% {
+    transform: rotate(9deg);
+  }
+  12.5% {
+    transform: rotate(-5deg);
+  }
+  14% {
+    transform: rotate(8deg);
+  }
+  15.5% {
+    transform: rotate(-5deg);
+  }
+  17% {
+    transform: rotate(8deg);
+  }
+  18.5% {
+    transform: rotate(-4deg);
+  }
+  20%,
+  22%,
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes legStepRight {
+  0%,
+  4% {
+    transform: rotate(0deg);
+  }
+  5% {
+    transform: rotate(-7deg);
+  }
+  6.5% {
+    transform: rotate(6deg);
+  }
+  8% {
+    transform: rotate(-7deg);
+  }
+  9.5% {
+    transform: rotate(6deg);
+  }
+  11% {
+    transform: rotate(-7deg);
+  }
+  12.5% {
+    transform: rotate(6deg);
+  }
+  14% {
+    transform: rotate(-7deg);
+  }
+  15.5% {
+    transform: rotate(6deg);
+  }
+  17% {
+    transform: rotate(-6deg);
+  }
+  18.5% {
+    transform: rotate(5deg);
+  }
+  20%,
+  22%,
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.canMount {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+  overflow: visible;
+}
+
+.canArt {
+  position: relative;
+  z-index: 1;
+}
+
+.pourMount {
+  position: absolute;
+  z-index: 2;
+  overflow: visible;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .storyAnimate .legGroupLeft,
+  .storyAnimate .legGroupRight {
+    animation: none;
+  }
+}

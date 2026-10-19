@@ -1,0 +1,89 @@
+.root {
+  margin-top: 0.35rem;
+  margin-bottom: 0.15rem;
+  padding-left: 1.25rem;
+  margin-left: -1.25rem;
+  max-width: 14rem;
+}
+
+.label {
+  display: block;
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(182, 203, 206, 0.75);
+  margin-bottom: 0.35rem;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.slider {
+  flex: 1;
+  min-width: 0;
+  accent-color: #e0f780;
+  cursor: pointer;
+}
+
+.value {
+  flex-shrink: 0;
+  font-size: 0.75rem;
+  font-variant-numeric: tabular-nums;
+  color: rgba(232, 242, 245, 0.9);
+  min-width: 2.25rem;
+  text-align: right;
+}
+
+.presets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.45rem;
+}
+
+.preset {
+  padding: 0.2rem 0.45rem;
+  font-size: 0.68rem;
+  line-height: 1.2;
+  border-radius: 6px;
+  border: 1px solid rgba(182, 203, 206, 0.28);
+  background: rgba(45, 58, 68, 0.35);
+  color: rgba(232, 242, 245, 0.88);
+  cursor: pointer;
+}
+
+.preset:hover {
+  border-color: rgba(224, 247, 128, 0.45);
+}
+
+.presetActive {
+  border-color: rgba(224, 247, 128, 0.65);
+  background: rgba(224, 247, 128, 0.12);
+  color: #e0f780;
+}
+
+.preset:focus-visible {
+  outline: 2px solid rgba(224, 247, 128, 0.55);
+  outline-offset: 2px;
+}
+
+@media (max-width: 991px) {
+  .topRightOnNarrow {
+    padding-left: 0;
+    margin-left: 0;
+    text-align: right;
+  }
+
+  .topRightOnNarrow .presets {
+    justify-content: flex-end;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .root {
+    display: none;
+  }
+}

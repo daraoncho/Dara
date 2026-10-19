@@ -1,0 +1,1102 @@
+/*
+ * Beat timing — STORY_DAY_COUNT × loop (4-day: slots 1/2/3 = Day 7 / 20 / observers).
+ * Observer fade = protagonist loop window; line keyframes = dialogue only.
+ */
+
+.bubble {
+  --bubble-fill: rgba(45, 58, 68, 0.96);
+  --bubble-edge: rgba(182, 203, 206, 0.5);
+
+  position: relative;
+  margin: 0;
+  padding: 7px 11px;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+  border-radius: 10px;
+  box-shadow:
+    0 2px 12px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.08) inset;
+  width: max-content;
+  max-width: 13.5rem;
+  opacity: 0;
+  will-change: opacity;
+}
+
+.bubbleSkepticTone {
+  --bubble-fill: rgba(45, 58, 68, 0.96);
+  --bubble-edge: rgba(182, 203, 206, 0.5);
+
+  color: #e8f2f5;
+  background: var(--bubble-fill);
+  border: 1px solid var(--bubble-edge);
+}
+
+/* Day 7 — green shirt (peer). */
+.bubblePeerTone {
+  --bubble-fill: rgba(36, 50, 42, 0.96);
+  --bubble-edge: rgba(93, 130, 104, 0.55);
+
+  color: #e8f2ec;
+  background: var(--bubble-fill);
+  border: 1px solid var(--bubble-edge);
+}
+
+/* Day 20 — red shirt (naysayer). */
+.bubbleNaysayerTone {
+  --bubble-fill: rgba(56, 38, 38, 0.96);
+  --bubble-edge: rgba(160, 85, 85, 0.5);
+
+  color: #f2e8e8;
+  background: var(--bubble-fill);
+  border: 1px solid var(--bubble-edge);
+}
+
+/* Sharp tail toward the speaker’s head. */
+.bubbleTailAtHead,
+.bubbleTailHeadToRight {
+  padding-bottom: 9px;
+}
+
+.bubbleTailAtHead::before,
+.bubbleTailAtHead::after,
+.bubbleTailHeadToRight::before,
+.bubbleTailHeadToRight::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 10px;
+}
+
+.bubbleTailAtHead::before {
+  bottom: -10px;
+  right: 10px;
+  background: var(--bubble-edge);
+  clip-path: polygon(0 0, 100% 0, 100% 100%);
+}
+
+.bubbleTailAtHead::after {
+  bottom: -8px;
+  right: 11px;
+  width: 10px;
+  height: 8px;
+  background: var(--bubble-fill);
+  clip-path: polygon(0 0, 100% 0, 100% 100%);
+}
+
+.bubbleTailHeadToRight::before {
+  bottom: -10px;
+  left: 10px;
+  background: var(--bubble-edge);
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+
+.bubbleTailHeadToRight::after {
+  bottom: -8px;
+  left: 11px;
+  width: 10px;
+  height: 8px;
+  background: var(--bubble-fill);
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+
+.observerSlot {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: max-content;
+  max-width: none;
+  transform: translateX(-100%) translateY(2px);
+  opacity: 0;
+  z-index: 1;
+}
+
+.observerSpeechSkeptic,
+.observerSpeechPeer {
+  flex-shrink: 0;
+  margin-bottom: var(--chat-gap-above-head-px, 14px);
+}
+
+.observerSpeechSkeptic {
+  transform: translateX(
+    calc(
+      -1 * var(--observer-width-px, 62px) *
+        var(--observer-head-from-right-ratio, 0.542)
+    )
+  );
+}
+
+.observerSpeechPeer {
+  transform: translateX(
+    calc(
+      -1 * var(--observer-width-px, 62px) *
+        var(--observer-head-from-right-ratio, 0.542) + 100%
+    )
+  );
+}
+
+.observerWonderSpeechGreen.observerSpeechPeer {
+  position: relative;
+  z-index: 3;
+  transform: translateX(
+      calc(
+        -1 * var(--observer-width-px, 62px) *
+          var(--observer-head-from-right-ratio, 0.542) + 100%
+      )
+    )
+    translateY(calc(-1 * var(--wonder-green-speech-lift, 36px)));
+}
+
+.observerBlue {
+  left: calc(
+    var(--stop-left-px, 0px) + var(--pro-width-px, 64px) +
+      var(--pro-width-px, 64px) * var(--observer-blue-behind-ratio, 0.72)
+  );
+}
+
+.observerRed {
+  left: calc(
+    var(--stop-left-px, 0px) + var(--pro-width-px, 64px) +
+      var(--pro-width-px, 64px) * var(--observer-red-behind-ratio, 1.32)
+  );
+  z-index: 2;
+}
+
+.observerNaysayer {
+  left: calc(
+    var(--stop-left-px, 0px) + var(--pro-width-px, 64px) +
+      var(--pro-width-px, 64px) *
+        var(--observer-naysayer-behind-ratio, 1.58)
+  );
+  z-index: 2;
+}
+
+.observerWonderRed {
+  left: calc(
+    var(--stop-left-px, 0px) + var(--pro-width-px, 64px) +
+      var(--pro-width-px, 64px) * var(--observer-wonder-red-ratio, 0.46)
+  );
+  z-index: 7;
+}
+
+.observerWonderGreen {
+  left: calc(
+    var(--stop-left-px, 0px) + var(--pro-width-px, 64px) +
+      var(--pro-width-px, 64px) * var(--observer-wonder-green-ratio, 0.84)
+  );
+  z-index: 6;
+}
+
+.observerWonderBlue {
+  left: calc(
+    var(--stop-left-px, 0px) + var(--pro-width-px, 64px) +
+      var(--pro-width-px, 64px) * var(--observer-wonder-blue-ratio, 1.22)
+  );
+  z-index: 5;
+}
+
+.observerWalkLayer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: max-content;
+  will-change: transform;
+}
+
+.observerWonderWalkRedWide {
+  animation-name: observerWonderWalkRedWide;
+}
+
+.observerWonderWalkGreenWide {
+  animation-name: observerWonderWalkGreenWide;
+}
+
+.observerWonderWalkBlueWide {
+  animation-name: observerWonderWalkBlueWide;
+}
+
+.observerWonderWalkRedNarrow {
+  animation-name: observerWonderWalkRedNarrow;
+}
+
+.observerWonderWalkGreenNarrow {
+  animation-name: observerWonderWalkGreenNarrow;
+}
+
+.observerWonderWalkBlueNarrow {
+  animation-name: observerWonderWalkBlueNarrow;
+}
+
+.observerWalkLayer[class*="observerWonderWalk"] {
+  animation-duration: calc(var(--story-day-count, 9) * var(--story-duration, 8s));
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.observerFade.beatsAnimate {
+  animation-duration: calc(var(--story-day-count, 4) * var(--story-duration, 8s));
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.beatDay7Wide {
+  animation-name: storyBeatDay7Wide;
+}
+
+.beatDay7Narrow {
+  animation-name: storyBeatDay7Narrow;
+}
+
+.beatDay20Wide {
+  animation-name: storyBeatDay20Wide;
+}
+
+.beatDay20Narrow {
+  animation-name: storyBeatDay20Narrow;
+}
+
+.beatWonderRedWide {
+  animation-name: storyBeatWonderRedWide;
+}
+
+.beatWonderGreenWide {
+  animation-name: storyBeatWonderGreenWide;
+}
+
+.beatWonderBlueWide {
+  animation-name: storyBeatWonderBlueWide;
+}
+
+.beatWonderRedNarrow {
+  animation-name: storyBeatWonderRedNarrow;
+}
+
+.beatWonderGreenNarrow {
+  animation-name: storyBeatWonderGreenNarrow;
+}
+
+.beatWonderBlueNarrow {
+  animation-name: storyBeatWonderBlueNarrow;
+}
+
+/*
+ * Observers — MUST match StoryDayHeadline storyDay3 / storyDay4 (Day 7 / Day 20).
+ * Day 20 line — walk start (DAY20_BEAT_LOOP_PHASE). Regenerate: printStoryBeatKeyframes.js
+ */
+
+/* Wide */
+@keyframes storyBeatDay7Wide {
+  0%,
+  30.666% {
+    opacity: 0;
+  }
+  31.556% {
+    opacity: 1;
+  }
+  40.889% {
+    opacity: 1;
+  }
+  41.333% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes storyBeatDay20Wide {
+  0%,
+  41.777% {
+    opacity: 0;
+  }
+  42.667% {
+    opacity: 1;
+  }
+  52% {
+    opacity: 1;
+  }
+  52.444% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes storyLineDay7Wide0 {
+  0%,
+  36.888% {
+    opacity: 0;
+  }
+  36.889% {
+    opacity: 1;
+  }
+  41.332% {
+    opacity: 1;
+  }
+  41.333% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes storyLineDay7Wide1 {
+  0%,
+  37.777% {
+    opacity: 0;
+  }
+  37.778% {
+    opacity: 1;
+  }
+  41.332% {
+    opacity: 1;
+  }
+  41.333% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes storyLineDay20Wide0 {
+  0%,
+  44.999% {
+    opacity: 0;
+  }
+  45% {
+    opacity: 1;
+  }
+  52.443% {
+    opacity: 1;
+  }
+  52.444% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
+/* Narrow */
+@keyframes storyBeatDay7Narrow {
+  0%,
+  31.332% {
+    opacity: 0;
+  }
+  32.222% {
+    opacity: 1;
+  }
+  41.778% {
+    opacity: 1;
+  }
+  42.222% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes storyBeatDay20Narrow {
+  0%,
+  42.443% {
+    opacity: 0;
+  }
+  43.333% {
+    opacity: 1;
+  }
+  52.889% {
+    opacity: 1;
+  }
+  53.333% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes storyLineDay7Narrow0 {
+  0%,
+  36.888% {
+    opacity: 0;
+  }
+  36.889% {
+    opacity: 1;
+  }
+  42.221% {
+    opacity: 1;
+  }
+  42.222% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes storyLineDay7Narrow1 {
+  0%,
+  37.777% {
+    opacity: 0;
+  }
+  37.778% {
+    opacity: 1;
+  }
+  42.221% {
+    opacity: 1;
+  }
+  42.222% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes storyLineDay20Narrow0 {
+  0%,
+  44.999% {
+    opacity: 0;
+  }
+  45% {
+    opacity: 1;
+  }
+  53.332% {
+    opacity: 1;
+  }
+  53.333% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.figure {
+  display: block;
+  flex-shrink: 0;
+}
+
+.lineAnimate {
+  animation-duration: calc(var(--story-day-count, 4) * var(--story-duration, 8s));
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.lineDay7Wide0 {
+  animation-name: storyLineDay7Wide0;
+}
+
+.lineDay7Wide1 {
+  animation-name: storyLineDay7Wide1;
+}
+
+.lineDay7Narrow0 {
+  animation-name: storyLineDay7Narrow0;
+}
+
+.lineDay7Narrow1 {
+  animation-name: storyLineDay7Narrow1;
+}
+
+.lineDay20Wide0 {
+  animation-name: storyLineDay20Wide0;
+}
+
+.lineDay20Narrow0 {
+  animation-name: storyLineDay20Narrow0;
+}
+
+.lineWonderRedWide0 {
+  animation-name: storyLineWonderRedWide0;
+}
+
+.lineWonderGreenWide0 {
+  animation-name: storyLineWonderGreenWide0;
+}
+
+.lineWonderBlueWide0 {
+  animation-name: storyLineWonderBlueWide0;
+}
+
+.lineWonderRedNarrow0 {
+  animation-name: storyLineWonderRedNarrow0;
+}
+
+.lineWonderGreenNarrow0 {
+  animation-name: storyLineWonderGreenNarrow0;
+}
+
+.lineWonderBlueNarrow0 {
+  animation-name: storyLineWonderBlueNarrow0;
+}
+
+.observerWonderLegRedLeftWide {
+  animation-name: observerWonderLegRedLeftWide;
+}
+
+.observerWonderLegRedRightWide {
+  animation-name: observerWonderLegRedRightWide;
+}
+
+.observerWonderLegGreenLeftWide {
+  animation-name: observerWonderLegGreenLeftWide;
+}
+
+.observerWonderLegGreenRightWide {
+  animation-name: observerWonderLegGreenRightWide;
+}
+
+.observerWonderLegBlueLeftWide {
+  animation-name: observerWonderLegBlueLeftWide;
+}
+
+.observerWonderLegBlueRightWide {
+  animation-name: observerWonderLegBlueRightWide;
+}
+
+.observerWonderLegRedLeftNarrow {
+  animation-name: observerWonderLegRedLeftNarrow;
+}
+
+.observerWonderLegRedRightNarrow {
+  animation-name: observerWonderLegRedRightNarrow;
+}
+
+.observerWonderLegGreenLeftNarrow {
+  animation-name: observerWonderLegGreenLeftNarrow;
+}
+
+.observerWonderLegGreenRightNarrow {
+  animation-name: observerWonderLegGreenRightNarrow;
+}
+
+.observerWonderLegBlueLeftNarrow {
+  animation-name: observerWonderLegBlueLeftNarrow;
+}
+
+.observerWonderLegBlueRightNarrow {
+  animation-name: observerWonderLegBlueRightNarrow;
+}
+
+/* Wonder day — trio walk-in. Regenerate: printWonderObserverKeyframes.js */
+
+/* === Wonder observers Wide (loop 8) === */
+
+/* Red */
+@keyframes storyBeatWonderRedWide {
+  0%,
+  86.221% {
+    opacity: 0;
+  }
+  86.222% {
+    opacity: 1;
+  }
+  96.888% {
+    opacity: 1;
+  }
+  96.889%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes observerWonderWalkRedWide {
+  0%,
+  86.221% {
+    transform: translateX(76px);
+  }
+  86.222% {
+    transform: translateX(76px);
+  }
+  87.96% {
+    transform: translateX(0);
+  }
+  96.888% {
+    transform: translateX(0);
+  }
+  96.889%,
+  100% {
+    transform: translateX(76px);
+  }
+}
+
+@keyframes storyLineWonderRedWide0 {
+  0%,
+  86.221% {
+    opacity: 0;
+  }
+  86.222% {
+    opacity: 1;
+  }
+  96.888% {
+    opacity: 1;
+  }
+  96.889%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes observerWonderLegRedLeftWide {
+  0%, 86.221% { transform: rotate(0deg); }
+  86.222% { transform: rotate(11deg); }
+  86.512% { transform: rotate(-5deg); }
+  86.801% { transform: rotate(11deg); }
+  87.091% { transform: rotate(-5deg); }
+  87.381% { transform: rotate(11deg); }
+  87.67% { transform: rotate(-5deg); }
+  87.96% { transform: rotate(11deg); }
+  87.961%, 100% { transform: rotate(0deg); }
+}
+
+@keyframes observerWonderLegRedRightWide {
+  0%, 86.221% { transform: rotate(0deg); }
+  86.222% { transform: rotate(-11deg); }
+  86.512% { transform: rotate(5deg); }
+  86.801% { transform: rotate(-11deg); }
+  87.091% { transform: rotate(5deg); }
+  87.381% { transform: rotate(-11deg); }
+  87.67% { transform: rotate(5deg); }
+  87.96% { transform: rotate(-11deg); }
+  87.961%, 100% { transform: rotate(0deg); }
+}
+
+
+/* Green */
+@keyframes storyBeatWonderGreenWide {
+  0%,
+  86.937% {
+    opacity: 0;
+  }
+  86.938% {
+    opacity: 1;
+  }
+  96.888% {
+    opacity: 1;
+  }
+  96.889%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes observerWonderWalkGreenWide {
+  0%,
+  86.937% {
+    transform: translateX(76px);
+  }
+  86.938% {
+    transform: translateX(76px);
+  }
+  88.676% {
+    transform: translateX(0);
+  }
+  96.888% {
+    transform: translateX(0);
+  }
+  96.889%,
+  100% {
+    transform: translateX(76px);
+  }
+}
+
+@keyframes storyLineWonderGreenWide0 {
+  0%,
+  86.937% {
+    opacity: 0;
+  }
+  86.938% {
+    opacity: 1;
+  }
+  96.888% {
+    opacity: 1;
+  }
+  96.889%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes observerWonderLegGreenLeftWide {
+  0%, 86.937% { transform: rotate(0deg); }
+  86.938% { transform: rotate(11deg); }
+  87.227% { transform: rotate(-5deg); }
+  87.517% { transform: rotate(11deg); }
+  87.807% { transform: rotate(-5deg); }
+  88.096% { transform: rotate(11deg); }
+  88.386% { transform: rotate(-5deg); }
+  88.676% { transform: rotate(11deg); }
+  88.677%, 100% { transform: rotate(0deg); }
+}
+
+@keyframes observerWonderLegGreenRightWide {
+  0%, 86.937% { transform: rotate(0deg); }
+  86.938% { transform: rotate(-11deg); }
+  87.227% { transform: rotate(5deg); }
+  87.517% { transform: rotate(-11deg); }
+  87.807% { transform: rotate(5deg); }
+  88.096% { transform: rotate(-11deg); }
+  88.386% { transform: rotate(5deg); }
+  88.676% { transform: rotate(-11deg); }
+  88.677%, 100% { transform: rotate(0deg); }
+}
+
+
+/* Blue */
+@keyframes storyBeatWonderBlueWide {
+  0%,
+  87.652% {
+    opacity: 0;
+  }
+  87.653% {
+    opacity: 1;
+  }
+  96.888% {
+    opacity: 1;
+  }
+  96.889%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes observerWonderWalkBlueWide {
+  0%,
+  87.652% {
+    transform: translateX(76px);
+  }
+  87.653% {
+    transform: translateX(76px);
+  }
+  89.391% {
+    transform: translateX(0);
+  }
+  96.888% {
+    transform: translateX(0);
+  }
+  96.889%,
+  100% {
+    transform: translateX(76px);
+  }
+}
+
+@keyframes storyLineWonderBlueWide0 {
+  0%,
+  87.652% {
+    opacity: 0;
+  }
+  87.653% {
+    opacity: 1;
+  }
+  96.888% {
+    opacity: 1;
+  }
+  96.889%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes observerWonderLegBlueLeftWide {
+  0%, 87.652% { transform: rotate(0deg); }
+  87.653% { transform: rotate(11deg); }
+  87.943% { transform: rotate(-5deg); }
+  88.233% { transform: rotate(11deg); }
+  88.522% { transform: rotate(-5deg); }
+  88.812% { transform: rotate(11deg); }
+  89.101% { transform: rotate(-5deg); }
+  89.391% { transform: rotate(11deg); }
+  89.392%, 100% { transform: rotate(0deg); }
+}
+
+@keyframes observerWonderLegBlueRightWide {
+  0%, 87.652% { transform: rotate(0deg); }
+  87.653% { transform: rotate(-11deg); }
+  87.943% { transform: rotate(5deg); }
+  88.233% { transform: rotate(-11deg); }
+  88.522% { transform: rotate(5deg); }
+  88.812% { transform: rotate(-11deg); }
+  89.101% { transform: rotate(5deg); }
+  89.391% { transform: rotate(-11deg); }
+  89.392%, 100% { transform: rotate(0deg); }
+}
+
+
+/* === Wonder observers Narrow (loop 8) === */
+
+/* Red */
+@keyframes storyBeatWonderRedNarrow {
+  0%,
+  86.888% {
+    opacity: 0;
+  }
+  86.889% {
+    opacity: 1;
+  }
+  97.777% {
+    opacity: 1;
+  }
+  97.778%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes observerWonderWalkRedNarrow {
+  0%,
+  86.888% {
+    transform: translateX(76px);
+  }
+  86.889% {
+    transform: translateX(76px);
+  }
+  88.664% {
+    transform: translateX(0);
+  }
+  97.777% {
+    transform: translateX(0);
+  }
+  97.778%,
+  100% {
+    transform: translateX(76px);
+  }
+}
+
+@keyframes storyLineWonderRedNarrow0 {
+  0%,
+  86.888% {
+    opacity: 0;
+  }
+  86.889% {
+    opacity: 1;
+  }
+  97.777% {
+    opacity: 1;
+  }
+  97.778%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes observerWonderLegRedLeftNarrow {
+  0%, 86.888% { transform: rotate(0deg); }
+  86.889% { transform: rotate(11deg); }
+  87.185% { transform: rotate(-5deg); }
+  87.481% { transform: rotate(11deg); }
+  87.777% { transform: rotate(-5deg); }
+  88.073% { transform: rotate(11deg); }
+  88.369% { transform: rotate(-5deg); }
+  88.664% { transform: rotate(11deg); }
+  88.665%, 100% { transform: rotate(0deg); }
+}
+
+@keyframes observerWonderLegRedRightNarrow {
+  0%, 86.888% { transform: rotate(0deg); }
+  86.889% { transform: rotate(-11deg); }
+  87.185% { transform: rotate(5deg); }
+  87.481% { transform: rotate(-11deg); }
+  87.777% { transform: rotate(5deg); }
+  88.073% { transform: rotate(-11deg); }
+  88.369% { transform: rotate(5deg); }
+  88.664% { transform: rotate(-11deg); }
+  88.665%, 100% { transform: rotate(0deg); }
+}
+
+
+/* Green */
+@keyframes storyBeatWonderGreenNarrow {
+  0%,
+  87.619% {
+    opacity: 0;
+  }
+  87.62% {
+    opacity: 1;
+  }
+  97.777% {
+    opacity: 1;
+  }
+  97.778%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes observerWonderWalkGreenNarrow {
+  0%,
+  87.619% {
+    transform: translateX(76px);
+  }
+  87.62% {
+    transform: translateX(76px);
+  }
+  89.396% {
+    transform: translateX(0);
+  }
+  97.777% {
+    transform: translateX(0);
+  }
+  97.778%,
+  100% {
+    transform: translateX(76px);
+  }
+}
+
+@keyframes storyLineWonderGreenNarrow0 {
+  0%,
+  87.619% {
+    opacity: 0;
+  }
+  87.62% {
+    opacity: 1;
+  }
+  97.777% {
+    opacity: 1;
+  }
+  97.778%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes observerWonderLegGreenLeftNarrow {
+  0%, 87.619% { transform: rotate(0deg); }
+  87.62% { transform: rotate(11deg); }
+  87.916% { transform: rotate(-5deg); }
+  88.212% { transform: rotate(11deg); }
+  88.508% { transform: rotate(-5deg); }
+  88.804% { transform: rotate(11deg); }
+  89.1% { transform: rotate(-5deg); }
+  89.396% { transform: rotate(11deg); }
+  89.397%, 100% { transform: rotate(0deg); }
+}
+
+@keyframes observerWonderLegGreenRightNarrow {
+  0%, 87.619% { transform: rotate(0deg); }
+  87.62% { transform: rotate(-11deg); }
+  87.916% { transform: rotate(5deg); }
+  88.212% { transform: rotate(-11deg); }
+  88.508% { transform: rotate(5deg); }
+  88.804% { transform: rotate(-11deg); }
+  89.1% { transform: rotate(5deg); }
+  89.396% { transform: rotate(-11deg); }
+  89.397%, 100% { transform: rotate(0deg); }
+}
+
+
+/* Blue */
+@keyframes storyBeatWonderBlueNarrow {
+  0%,
+  88.35% {
+    opacity: 0;
+  }
+  88.351% {
+    opacity: 1;
+  }
+  97.777% {
+    opacity: 1;
+  }
+  97.778%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes observerWonderWalkBlueNarrow {
+  0%,
+  88.35% {
+    transform: translateX(76px);
+  }
+  88.351% {
+    transform: translateX(76px);
+  }
+  90.127% {
+    transform: translateX(0);
+  }
+  97.777% {
+    transform: translateX(0);
+  }
+  97.778%,
+  100% {
+    transform: translateX(76px);
+  }
+}
+
+@keyframes storyLineWonderBlueNarrow0 {
+  0%,
+  88.35% {
+    opacity: 0;
+  }
+  88.351% {
+    opacity: 1;
+  }
+  97.777% {
+    opacity: 1;
+  }
+  97.778%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes observerWonderLegBlueLeftNarrow {
+  0%, 88.35% { transform: rotate(0deg); }
+  88.351% { transform: rotate(11deg); }
+  88.647% { transform: rotate(-5deg); }
+  88.943% { transform: rotate(11deg); }
+  89.239% { transform: rotate(-5deg); }
+  89.535% { transform: rotate(11deg); }
+  89.831% { transform: rotate(-5deg); }
+  90.127% { transform: rotate(11deg); }
+  90.128%, 100% { transform: rotate(0deg); }
+}
+
+@keyframes observerWonderLegBlueRightNarrow {
+  0%, 88.35% { transform: rotate(0deg); }
+  88.351% { transform: rotate(-11deg); }
+  88.647% { transform: rotate(5deg); }
+  88.943% { transform: rotate(-11deg); }
+  89.239% { transform: rotate(5deg); }
+  89.535% { transform: rotate(-11deg); }
+  89.831% { transform: rotate(5deg); }
+  90.127% { transform: rotate(-11deg); }
+  90.128%, 100% { transform: rotate(0deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .beatDay7Wide,
+  .beatDay7Narrow,
+  .beatDay20Wide,
+  .beatDay20Narrow,
+  .beatWonderRedWide,
+  .beatWonderGreenWide,
+  .beatWonderBlueWide,
+  .beatWonderRedNarrow,
+  .beatWonderGreenNarrow,
+  .beatWonderBlueNarrow,
+  [class*="observerWonderWalk"],
+  [class*="observerWonderLeg"],
+  .lineDay7Wide0,
+  .lineDay7Wide1,
+  .lineDay7Narrow0,
+  .lineDay7Narrow1,
+  .lineDay20Wide0,
+  .lineDay20Narrow0,
+  .lineWonderRedWide0,
+  .lineWonderGreenWide0,
+  .lineWonderBlueWide0,
+  .lineWonderRedNarrow0,
+  .lineWonderGreenNarrow0,
+  .lineWonderBlueNarrow0 {
+    animation: none;
+    opacity: 0;
+  }
+}

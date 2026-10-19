@@ -1,0 +1,17 @@
+.legLeft,
+.legRight {
+  transform-box: fill-box;
+  transform-origin: 50% 0%;
+}
+
+.observerWonderLeg {
+  animation-duration: calc(var(--story-day-count, 9) * var(--story-duration, 8s));
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .observerWonderLeg {
+    animation: none !important;
+  }
+}

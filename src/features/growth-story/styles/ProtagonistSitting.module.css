@@ -1,0 +1,6 @@
+.figure {
+  display: block;
+  flex-shrink: 0;
+  transform: translateX(-6px) translateY(1px);
+  vertical-align: bottom;
+}

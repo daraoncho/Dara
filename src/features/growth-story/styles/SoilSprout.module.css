@@ -1,0 +1,320 @@
+.root {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 3;
+  overflow: visible;
+}
+
+.plantCanvas {
+  position: absolute;
+  left: 0;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.plantMaster {
+  animation-duration: calc(var(--story-day-count, 9) * var(--story-duration, 8s));
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.treeLayer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 2;
+  opacity: 0;
+  transform: scale(0.05);
+  transform-origin: 50% 91.03%;
+  will-change: transform, opacity;
+  filter: drop-shadow(0 3px 8px rgba(45, 90, 56, 0.18));
+}
+
+.sproutLayer {
+  z-index: 1;
+}
+
+.reveal {
+  opacity: 0;
+  transform-origin: 50% 85%;
+  will-change: opacity, transform;
+}
+
+.revealWide {
+  animation-name: sproutRevealWide;
+}
+
+.revealNarrow {
+  animation-name: sproutRevealNarrow;
+}
+
+.revealWide.sproutUnderTreeWide {
+  animation-name: sproutRevealWide, sproutUnderTreeWide;
+}
+
+.revealNarrow.sproutUnderTreeNarrow {
+  animation-name: sproutRevealNarrow, sproutUnderTreeNarrow;
+}
+
+.wonderTreeGrowWide {
+  animation-name: wonderTreeGrowWide;
+}
+
+.wonderTreeGrowNarrow {
+  animation-name: wonderTreeGrowNarrow;
+}
+
+/* Regenerate: node src/features/growth-story/utils/printSurpriseBeatKeyframes.js */
+@keyframes sproutRevealWide {
+  0%,
+  75.11% {
+    transform: scale(0.72);
+  }
+  75.111% {
+    transform: scale(0.72);
+  }
+  76% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes sproutRevealNarrow {
+  0%,
+  75.777% {
+    transform: scale(0.72);
+  }
+  75.778% {
+    transform: scale(0.72);
+  }
+  76.667% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Regenerate: node src/features/growth-story/utils/printWonderGrowKeyframes.js */
+@keyframes wonderTreeGrowWide {
+  0%,
+  86.221% {
+    opacity: 0;
+    transform: scale(0.05);
+  }
+  86.222% {
+    opacity: 0.18;
+    transform: scale(0.06);
+  }
+  86.952% {
+    opacity: 0.316;
+    transform: scale(0.216);
+  }
+  87.683% {
+    opacity: 0.438;
+    transform: scale(0.356);
+  }
+  88.413% {
+    opacity: 0.546;
+    transform: scale(0.479);
+  }
+  89.143% {
+    opacity: 0.64;
+    transform: scale(0.588);
+  }
+  89.873% {
+    opacity: 0.722;
+    transform: scale(0.682);
+  }
+  90.603% {
+    opacity: 0.792;
+    transform: scale(0.761);
+  }
+  91.333% {
+    opacity: 0.85;
+    transform: scale(0.828);
+  }
+  92.063% {
+    opacity: 0.897;
+    transform: scale(0.882);
+  }
+  92.794% {
+    opacity: 0.934;
+    transform: scale(0.925);
+  }
+  93.524% {
+    opacity: 0.962;
+    transform: scale(0.956);
+  }
+  94.254% {
+    opacity: 0.981;
+    transform: scale(0.978);
+  }
+  94.984% {
+    opacity: 0.993;
+    transform: scale(0.992);
+  }
+  95.714% {
+    opacity: 0.999;
+    transform: scale(0.999);
+  }
+  96.444% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  96.888% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  96.889%,
+  100% {
+    opacity: 0;
+    transform: scale(0.05);
+  }
+}
+
+@keyframes sproutUnderTreeWide {
+  0%,
+  75.11% {
+    opacity: 0;
+  }
+  75.111% {
+    opacity: 0;
+  }
+  76% {
+    opacity: 1;
+  }
+  86.221% {
+    opacity: 1;
+  }
+  86.222%,
+  96.888% {
+    opacity: 0;
+  }
+  96.889%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes wonderTreeGrowNarrow {
+  0%,
+  86.888% {
+    opacity: 0;
+    transform: scale(0.05);
+  }
+  86.889% {
+    opacity: 0.18;
+    transform: scale(0.06);
+  }
+  87.635% {
+    opacity: 0.316;
+    transform: scale(0.216);
+  }
+  88.381% {
+    opacity: 0.438;
+    transform: scale(0.356);
+  }
+  89.127% {
+    opacity: 0.546;
+    transform: scale(0.479);
+  }
+  89.873% {
+    opacity: 0.64;
+    transform: scale(0.588);
+  }
+  90.619% {
+    opacity: 0.722;
+    transform: scale(0.682);
+  }
+  91.365% {
+    opacity: 0.792;
+    transform: scale(0.761);
+  }
+  92.111% {
+    opacity: 0.85;
+    transform: scale(0.828);
+  }
+  92.857% {
+    opacity: 0.897;
+    transform: scale(0.882);
+  }
+  93.603% {
+    opacity: 0.934;
+    transform: scale(0.925);
+  }
+  94.349% {
+    opacity: 0.962;
+    transform: scale(0.956);
+  }
+  95.095% {
+    opacity: 0.981;
+    transform: scale(0.978);
+  }
+  95.841% {
+    opacity: 0.993;
+    transform: scale(0.992);
+  }
+  96.587% {
+    opacity: 0.999;
+    transform: scale(0.999);
+  }
+  97.333% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  97.777% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  97.778%,
+  100% {
+    opacity: 0;
+    transform: scale(0.05);
+  }
+}
+
+@keyframes sproutUnderTreeNarrow {
+  0%,
+  75.777% {
+    opacity: 0;
+  }
+  75.778% {
+    opacity: 0;
+  }
+  76.667% {
+    opacity: 1;
+  }
+  86.887% {
+    opacity: 1;
+  }
+  86.888%,
+  97.777% {
+    opacity: 0;
+  }
+  97.778%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .revealWide,
+  .revealNarrow,
+  .wonderTreeGrowWide,
+  .wonderTreeGrowNarrow,
+  .sproutUnderTreeWide,
+  .sproutUnderTreeNarrow {
+    animation: none;
+  }
+
+  .revealWide,
+  .revealNarrow {
+    opacity: 0;
+  }
+}

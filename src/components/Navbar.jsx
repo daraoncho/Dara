@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
 import nav from "../styles/Navbar.module.css";
 import avatar from "../assets/img/DaraAvatar.webp";
+import ProfilePortrait from "./ProfilePortrait";
 import { RiMenu2Line } from "react-icons/ri";
 import { RxCross2 } from "react-icons/rx";
 import { GameToggle } from "../features/thought-fragments";
 
-const Navbar = () => {
+const Navbar = ({ enableGame = true }) => {
   const [activeLink, setActiveLink] = useState('');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -35,10 +36,10 @@ const Navbar = () => {
     <div>
       <nav className={nav.navbar} data-game-navbar>
         <div className={nav.navbarContainer}>
-          <a href="#">
-            <span>Dara</span>
-            <img src={avatar} alt="Avatar" />
-          </a>
+          <div className={nav.brand}>
+            <span className={nav.brandName}>Dara</span>
+            <ProfilePortrait src={avatar} alt="Dara" />
+          </div>
           <button
             className={nav.menuButton}
             type="button"
@@ -55,7 +56,7 @@ const Navbar = () => {
               <li className={nav.navItem}>
                 <a
                   className={`${nav.navLink} ${activeLink === 'home' ? nav.active : ''}`}
-                  href="#home"
+                  href="/#home"
                   onClick={() => { setActiveLink('home'); setIsMenuOpen(false); }}
                 >
                   Home
@@ -64,7 +65,7 @@ const Navbar = () => {
               <li className={nav.navItem}>
                 <a
                   className={`${nav.navLink} ${activeLink === 'about' ? nav.active : ''}`}
-                  href="#about"
+                  href="/#about"
                   onClick={() => { setActiveLink('about'); setIsMenuOpen(false); }}
                 >
                   About
@@ -73,7 +74,7 @@ const Navbar = () => {
               <li className={nav.navItem}>
                 <a
                   className={`${nav.navLink} ${activeLink === 'experience' ? nav.active : ''}`}
-                  href="#experience"
+                  href="/#experience"
                   onClick={() => { setActiveLink('experience'); setIsMenuOpen(false); }}
                 >
                   Experience
@@ -82,7 +83,7 @@ const Navbar = () => {
               <li className={nav.navItem}>
                 <a
                   className={`${nav.navLink} ${activeLink === 'work' ? nav.active : ''}`}
-                  href="#work"
+                  href="/#work"
                   onClick={() => { setActiveLink('work'); setIsMenuOpen(false); }}
                 >
                   Work
@@ -101,7 +102,7 @@ const Navbar = () => {
                 </a>
               </li> */}
             </ul>
-            <GameToggle variant="sidebar" />
+            {enableGame && <GameToggle variant="sidebar" />}
           </div>
         </div>
       </nav>
