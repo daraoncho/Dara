@@ -6,7 +6,12 @@ import NotFound from "./pages/NotFound";
 function App() {
   return (
     <GameModeProvider>
-      <BrowserRouter>
+      <BrowserRouter
+        future={{
+          v7_startTransition: true,
+          v7_relativeSplatPath: true,
+        }}
+      >
         <div className="App">
           <Routes>
             <Route path="/" element={<PortfolioSite />} />

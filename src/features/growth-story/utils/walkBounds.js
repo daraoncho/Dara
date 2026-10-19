@@ -29,8 +29,18 @@ export function computeWalkMetrics(
   const endGapPx = computeWalkEndGap(soilWidthPx, proWidthPx, viewportWidth);
 
   const startProLeft = trackWidthPx - proWidthPx;
-  const endProLeft = soilWidthPx + endGapPx;
-  const naturalTravel = startProLeft - endProLeft;
+  let endProLeft = soilWidthPx + endGapPx;
+  let naturalTravel = startProLeft - endProLeft;
+
+  // Narrow rails: soil + gap can exceed track — still allow a short walk instead of static.
+  if (naturalTravel < b.minTravelPx && startProLeft > b.minTravelPx) {
+    endProLeft = startProLeft - b.minTravelPx;
+    naturalTravel = b.minTravelPx;
+  } else if (naturalTravel < 1 && startProLeft > 8) {
+    const fallbackTravel = Math.min(b.minTravelPx, Math.floor(startProLeft * 0.75));
+    endProLeft = Math.max(0, startProLeft - fallbackTravel);
+    naturalTravel = startProLeft - endProLeft;
+  }
 
   let travelPx = Math.max(0, naturalTravel);
 

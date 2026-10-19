@@ -47,7 +47,8 @@ Symbolic tokens: `STORY_UNKNOWN_DAY`, `STORY_SURPRISE_DAY`, `STORY_WONDER_DAY`.
 - **Per-day duration**: `STORY_ANIMATION.durationMs` (8000 ms) exposed as CSS `--story-duration` (scaled by playback speed — see [playback-and-controls.md](./playback-and-controls.md)).
 - **Master loop**: `calc(var(--story-day-count) * var(--story-duration))` on beat/headline animations.
 - **Wide vs narrow keyframes**: breakpoint `992px` (`constants/rail.js`, `useStoryKeyframeSet.js`) — `STORY_KEYFRAME` vs `STORY_KEYFRAME_NARROW` in `constants/animation.js`.
-- **`prefers-reduced-motion`**: static pose beside soil; playback UI hidden.
+- **`prefers-reduced-motion`**: static pose beside soil; playback UI hidden. Chrome DevTools → **Rendering** → “Emulate prefers-reduced-motion” will look the same (by design).
+- **Narrow rails**: walk distance is computed in `utils/walkBounds.js`; if soil measurement is wider than the track, the stop position is adjusted so `travelPx` stays &gt; 0 instead of disabling animation.
 
 ### Regenerating keyframe CSS
 
